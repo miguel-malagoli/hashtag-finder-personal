@@ -42,18 +42,43 @@
     </head>
 
 
-    <!--Corpo da página-->
-    <body>
+    <!--Corpo da página, com estilo provisório-->
+    <body style="background-color: #0A1744;">
 
-        <!--Imagem e cor de fundo-->
-        <div id="fundo">
+        <!--Imagem de fundo-->
+        <img
+            class="fundo"
+            src="imagens/about-hero-bg.jpg"
+        >
+
+        <!--Topo da página - Bloco "Header"-->
+        <header class="header">
+
+            <!--Logo-->
             <img
-                id="fundo-imagem"
-                src="imagens/hero-bg.jpg"
+                class="header__logo"
+                src="imagens/logo.svg"
             >
-        </div>
 
-        <header>
+            <!--Botões de navegação-->
+            <div class="header__navigation">
+                <!--Atalho para a página principal-->
+                <button class="header__button button button_theme_light">
+                    <img
+                        class="button__icon"
+                        src="imagens/icon-info-circle.svg"
+                    >
+                    SOBRE
+                </button>
+                <!--Atalho para a página de login-->
+                <button class="header__button button button_theme_dark">
+                    <img
+                    class="button__icon"
+                    src="imagens/icon-user-alt.svg"
+                    >
+                    LOGIN
+                </button>
+            </div>
 
         </header>
 
