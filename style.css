@@ -1,8 +1,21 @@
+/* Corpo da página - Fundo e características gerais */
 body {
+
+    /* Remoção da margem padrão */
     margin: 0;
+
+    /* Fundos: */
+        /* Gradiente (meio) */
     background: linear-gradient(180deg, #0A174400 0%, #0A1744 100%) no-repeat,
+        /* Imagem (topo, por baixo do gradiente) */
         url(imagens/about-hero-bg.jpg) no-repeat,
+        /* Cor (página inteira) */
         #0A1744;
+    /* Tamanho e posição do gradiente e imagem */
     background-size:  100vw 36vw, contain;
     background-position:  0% 18vw, 0% -2vw;
+
+    /* Padrão de texto (fonte e cor) */
+    color: #FCFCFC;
+    font-family: 'Rubik', Arial, sans-serif;
 }
