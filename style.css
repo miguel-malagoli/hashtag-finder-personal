@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #0A174400 0%, #0A1744 100%) no-repeat,
+        url(imagens/about-hero-bg.jpg) no-repeat,
+        #0A1744;
+    background-size:  100vw 36vw, contain;
+    background-position:  0% 18vw, 0% -2vw;
+}
