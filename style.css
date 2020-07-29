@@ -19,3 +19,108 @@ body {
     color: #FCFCFC;
     font-family: 'Rubik', Arial, sans-serif;
 }
+
+
+/* Topo da página */
+.header {
+
+    /* Fixação ao topo da página */
+    position: fixed;
+    top: 0;
+
+    /* Tamanho */
+    width: 94vw;
+    height: 6vw;
+
+    /* Cor, sombra e efeito */
+    background-color: #0a1744ad;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0px 3px 29px #5538EE1F;
+
+    /* Disposição dos elementos do bloco */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3vw 0 3vw;
+}
+
+
+/* Logo */
+.header__logo {
+
+    /* Tamanho */
+    height: 2.5vw;
+}
+
+
+/* Conjunto de botões de navegação */
+.header__navigation {
+
+    /* Disposição dos elementos */
+    display: flex;
+    justify-content: space-between;
+    margin-right: 18px;
+
+    /* Tamanho (relevante para o espaçamento dos botões) */
+    width: 19vw;
+}
+
+
+/* Botão */
+.button {
+
+    /* Tamanho */
+    width: 8.5vw;
+    height: 2.5vw;
+
+    /* Borda */
+    border: none;
+    border-radius: 1.25vw;
+
+    /* Texto */
+    font-family: 'Rubik', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.85vw;
+    letter-spacing: .2em;
+
+    /* Cursor */
+    cursor: pointer;
+
+    /* Transição de cor (cores especificadas por tema) */
+    transition: background-color ease-out .4s;
+}
+
+
+/* Ícone de botâo */
+.button__icon {
+
+    /* Ajuste de posição */
+    position: relative;
+    top: .1vw;
+
+    /* Tamanho */
+    width: 0.75vw;
+    height: 0.75vw;
+
+    /* Distância do texto */
+    margin-right: 0.75vw;
+}
+
+
+/* Tema claro para botões */
+.button_theme_light {
+    background-color: #72EFDB;
+    color: #0B1741;
+}
+.button_theme_light:hover {
+    background-color: #99fff0;
+}
+/* Tema escuro para botões */
+.button_theme_dark {
+    background-color: #1E3E7B;
+    color: #FFFFFF;
+}
+.button_theme_dark:hover {
+    background-color: #32589c;
+}
