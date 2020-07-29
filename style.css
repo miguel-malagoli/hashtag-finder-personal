@@ -136,3 +136,31 @@ body {
 .button_theme_dark:hover {
     background-color: #32589c;
 }
+
+
+.projeto {
+    display: flex;
+    margin: 13vw 7vw 10vw;
+    justify-content: space-between;
+}
+
+
+.projeto__title {
+    font-size: 4.25vw;
+    font-weight: 700;
+    line-height: 4.5vw;
+    margin: 0 0 2vw;
+}
+
+
+.projeto__text {
+    width: 39vw;
+    line-height: 2vw;
+    font-size: 1vw;
+}
+
+
+.projeto__image {
+    height: 27vw;
+    margin-top: 2.5vw;
+}
