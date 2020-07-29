@@ -138,29 +138,49 @@ body {
 }
 
 
+/* Bloco do projeto */
 .projeto {
+
+    /* Disposição dos elementos */
     display: flex;
-    margin: 13vw 7vw 10vw;
     justify-content: space-between;
+
+    /* Margens */
+    margin: 13vw 7vw 10vw;
 }
 
 
+/* Título */
 .projeto__title {
+
+    /* Fonte */
     font-size: 4.25vw;
     font-weight: 700;
+
+    /* Espaçamento */
     line-height: 4.5vw;
     margin: 0 0 2vw;
 }
 
 
+/* Texto */
 .projeto__text {
+
+    /* Tamanho */
     width: 39vw;
     line-height: 2vw;
+
+    /* Fonte */
     font-size: 1vw;
 }
 
 
+/* Ilustração */
 .projeto__image {
+
+    /* Tamanho */
     height: 27vw;
+
+    /* Espaçamento */
     margin-top: 2.5vw;
 }
