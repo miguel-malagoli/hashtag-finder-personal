@@ -31,6 +31,7 @@ body {
     /* Tamanho */
     width: 94vw;
     height: 6vw;
+    min-height: 82px;
 
     /* Cor, sombra e efeito */
     background-color: #0a1744ad;
@@ -51,6 +52,7 @@ body {
 
     /* Tamanho */
     height: 2.5vw;
+    min-height: 23px;
 }
 
 
@@ -64,6 +66,7 @@ body {
 
     /* Tamanho (relevante para o espaçamento dos botões) */
     width: 19vw;
+    min-width: 225px;
 }
 
 
@@ -72,23 +75,32 @@ body {
 
     /* Tamanho */
     width: 8.5vw;
+    min-width: 106px;
     height: 2.5vw;
+    min-height: 30px;
 
     /* Borda */
     border: none;
-    border-radius: 1.25vw;
+    /* Valor absoluto muito alto para arredondar 50% da altura */
+    border-radius: 9999px;
 
     /* Texto */
     font-family: 'Rubik', Arial, sans-serif;
     font-weight: bold;
-    font-size: 0.85vw;
-    letter-spacing: .2em;
+    font-size: 10px;
+    letter-spacing: .15em;
 
     /* Cursor */
     cursor: pointer;
 
     /* Transição de cor (cores especificadas por tema) */
     transition: background-color ease-out .4s;
+}
+/* Texto - Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .button {
+        font-size: .85vw;
+    }
 }
 
 
@@ -97,14 +109,14 @@ body {
 
     /* Ajuste de posição */
     position: relative;
-    top: .1vw;
+    top: 2px;
 
     /* Tamanho */
-    width: 0.75vw;
-    height: 0.75vw;
+    height: .75vw;
+    min-height: 10px;
 
     /* Distância do texto */
-    margin-right: 0.75vw;
+    margin-right: .5em;
 }
 
 
@@ -114,7 +126,7 @@ body {
     color: #0B1741;
 }
 .button_theme_light:hover {
-    background-color: #99fff0;
+    background-color: #b3fff4;
 }
 /* Tema escuro para botões */
 .button_theme_dark {
