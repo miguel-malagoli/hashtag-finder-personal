@@ -1,0 +1,473 @@
+/* Corpo da página - Fundo e características gerais */
+body {
+
+    /* Remoção da margem padrão */
+    margin: 0;
+
+    /* Fundos: */
+        /* Gradiente (meio) */
+    background: linear-gradient(180deg, #0A174400 0%, #0A1744 100%) no-repeat,
+        /* Imagem (topo, por baixo do gradiente) */
+        url(imagens/about-hero-bg.jpg) no-repeat,
+        /* Cor (página inteira) */
+        #0A1744;
+    /* Tamanho e posição do gradiente e imagem */
+    background-size:  100vw 42vmax, auto 100vmax;
+    background-position:  0% 58.5vmax, 0% 0%;
+
+    /* Padrão de texto (fonte e cor) */
+    color: #FCFCFC;
+    font-family: 'Rubik', Arial, sans-serif;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    body {
+        /* Fundos: */
+        background-size:  100vw 36vw, contain;
+        background-position:  0% 18vw, 0% -2vw;
+    }
+}
+
+
+/* ----------------------- BLOCO HEADER ----------------------- */
+
+/* Topo da página */
+.header {
+
+    /* Fixação ao topo da página */
+    position: fixed;
+    top: 0;
+
+    /* Tamanho */
+    width: 94vw;
+    height: 6vw;
+    min-height: 82px;
+
+    /* Cor, sombra e efeito */
+    background-color: #0a1744ad;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0px 3px 29px #5538EE1F;
+
+    /* Disposição dos elementos do bloco */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.8vw 0;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .header {
+        padding: 0 3vw 0;
+    }
+}
+
+
+/* Logo */
+.header__logo {
+
+    /* Tamanho */
+    height: 2.5vw;
+    min-height: 23px;
+}
+
+
+/* Conjunto de botões de navegação */
+.header__navigation {
+
+    /* Disposição dos elementos */
+    display: flex;
+    justify-content: space-between;
+    margin-right: .1vw;
+
+    /* Tamanho (relevante para o espaçamento dos botões) */
+    width: 19vw;
+    min-width: 184px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .header__navigation {
+        min-width: 225px;
+    }
+}
+
+
+/* ----------------------- BLOCO BUTTON ----------------------- */
+
+/* Botão */
+.button {
+
+    /* Tamanho */
+    width: 8.5vw;
+    min-width: 86px;
+    height: 2.5vw;
+    min-height: 30px;
+
+    /* Borda */
+    border: none;
+    /* Valor absoluto muito alto para arredondar 50% da altura */
+    border-radius: 9999px;
+
+    /* Texto */
+    font-family: 'Rubik', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: .15em;
+
+    /* Cursor */
+    cursor: pointer;
+
+    /* Transição de cor (cores especificadas por tema) */
+    transition: background-color ease-out .4s;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .button {
+        /* Texto */
+        font-size: .85vw;
+        /* Tamanho */
+        min-width: 106px;
+    }
+}
+
+
+/* Ícone de botâo */
+.button__icon {
+
+    /* Ajuste de posição */
+    position: relative;
+    top: 1px;
+
+    /* Tamanho */
+    height: .75vw;
+    min-height: 10px;
+
+    /* Distância do texto */
+    margin-right: .5em;
+}
+
+
+/* Tema claro para botões */
+.button_theme_light {
+    background-color: #72EFDB;
+    color: #0B1741;
+}
+.button_theme_light:hover {
+    background-color: #b3fff4;
+}
+/* Tema escuro para botões */
+.button_theme_dark {
+    background-color: #1E3E7B;
+    color: #FFFFFF;
+}
+.button_theme_dark:hover {
+    background-color: #32589c;
+}
+
+
+/* ----------------------- BLOCO PROJETO ----------------------- */
+
+/* Bloco do projeto */
+.projeto {
+
+    /* Disposição dos elementos */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    /* Margens */
+    margin: 127px 7vw 50px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .projeto {
+        /* Disposição */
+        justify-content: space-between;
+        margin: 13vw 7vw 10vw;
+    }
+}
+
+
+/* Título */
+.projeto__title {
+
+    /* Fonte */
+    font-size: 33px;
+    font-weight: 700;
+
+    /* Espaçamento */
+    line-height: 4.5vw;
+    margin: 0 0 31px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .projeto__title {
+        /* Fonte */
+        font-size: 4.25vw;
+
+        /* Espaçamento */
+        margin: 0 0 2vw;
+    }
+}
+
+
+/* Texto */
+.projeto__text {
+
+    /* Tamanho */
+    width: 100%;
+    line-height: 26px;
+
+    /* Fonte */
+    font-size: 15px;
+
+    /* Margens */
+    margin-bottom: 4.5em;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .projeto__text {
+        /* Fonte */
+        font-size: 1vw;
+        line-height: 2vw;
+        /* Tamanho */
+        margin-bottom: 0;
+        width: 39vw;
+    }
+}
+
+
+/* Ilustração */
+.projeto__image {
+
+    /* Tamanho */
+    width: 534px;
+    max-width: 100%;
+
+    /* Espaçamento */
+    margin-top: 2.5vw;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .projeto__image {
+        height: 27vw;
+        width: auto;
+    }
+}
+
+
+/* ----------------------- BLOCO EQUIPE ----------------------- */
+
+/* Bloco da equipe */
+.equipe {
+
+    /* Margens */
+    margin: 0 3.5vw 64px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .equipe {
+        margin: 0 10vw 9.5vw;
+    }
+}
+
+
+/* Título */
+.equipe__title {
+
+    /* Fonte */
+    font-size: 27px;
+
+    /* Tamanho */
+    margin: 0 4vw 45px;
+    line-height: 3vw;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .equipe__title {
+        /* Fonte */
+        font-size: 2.8vw;
+        /* Margem */
+        margin: 0 .8vw 5.5vw;
+    }
+}
+
+
+/* Lista de membros */
+.equipe__members {
+
+    /* Disposição */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+/* Disposição - Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .equipe__members {
+        justify-content: space-between;
+    }
+}
+
+
+/* ----------------------- BLOCO PROFILE ----------------------- */
+
+/* Bloco dos perfis */
+.profile {
+
+    /* Cor e forma */
+    background-color: #0B1A49;
+    border: solid 1px #FFFFFF24;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px #5538EE14;
+
+    /* Tamanho */
+    width: 400px;
+    max-width: 100%;
+    margin: 0 2% 46px;
+
+    /* Texto */
+    text-align: center;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .profile {
+        width: 18.2vw;
+        margin: 0;
+    }
+}
+
+
+/* Foto de perfil */
+.profile__image {
+
+    /* Tamanho e forma */
+    width: 204px;
+    max-width: 43vw;
+    height: 204px;
+    max-height: 43vw;
+    object-fit: cover;
+    border-radius: 50%;
+
+    /* Margem */
+    margin: 36px 4.5vw 22px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .profile__image {
+        width: 9.25vw;
+        height: 9.25vw;
+        margin: 1.8vw 4.5vw 1.1vw;
+    }
+}
+
+
+/* Nome */
+.profile__name {
+
+    /* Fonte */
+    color: #72EFDB;
+    font-size: 28px;
+
+    /* Margem */
+    margin: 0 .75vw 22px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .profile__name {
+        font-size: 1.4vw;
+        margin: 0 .75vw 1.1vw;
+    }
+}
+
+
+/* Descrição */
+.profile__text {
+
+    /* Fonte */
+    font-size: 19px;
+    font-weight: 300;
+    color: #D9D9D9;
+
+    /* Espaçamento */
+    line-height: 25px;
+    margin: 0 36px 24px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .profile__text {
+        font-size: 1vw;
+        line-height: 1.3vw;
+        margin: 0 1vw 2vw;
+    }
+}
+
+
+/* Lista de contatos */
+.profile__links {
+
+    /* Disposição */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Tamanho */
+    width: 34%;
+    margin: 0 33% 38px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .profile__links {
+        width: 7vw;
+        margin: 0 5.6vw 1.8vw;
+    }
+}
+
+
+/* Ícones de contato */
+.profile__icon {
+
+    /* Tamanho */
+    height: 24px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .profile__icon {
+        height: 1.25vw;
+    }
+}
+
+
+/* ----------------------- BLOCO FOOTER ----------------------- */
+
+/* Bloco do rodapé */
+.footer {
+
+    /* Cor e tamanho */
+    background-color: #1e3f7bbd;
+    padding: 42px 0;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .footer {
+        padding: 4.5vw 0;
+    }
+}
+
+
+/* Texto */
+.footer__text {
+
+    /* Fonte */
+    font-size: 12px;
+    font-weight: 300;
+
+    /* Espaçamento */
+    text-align: center;
+    margin: 0;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .footer__text {
+        font-size: 1.3vw;
+    }
+}
