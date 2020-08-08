@@ -1,0 +1,32 @@
+/* Bloco do rodapé */
+.footer {
+
+    /* Cor e tamanho */
+    background-color: #1e3f7bbd;
+    padding: 42px 0;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .footer {
+        padding: 4.5vw 0;
+    }
+}
+
+
+/* Texto */
+.footer__text {
+
+    /* Fonte */
+    font-size: 12px;
+    font-weight: 300;
+
+    /* Espaçamento */
+    text-align: center;
+    margin: 0;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .footer__text {
+        font-size: 1.3vw;
+    }
+}

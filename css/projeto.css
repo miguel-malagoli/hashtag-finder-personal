@@ -1,0 +1,87 @@
+/* Bloco do projeto */
+.projeto {
+
+    /* Disposição dos elementos */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    /* Margens */
+    margin: 127px 7vw 50px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .projeto {
+        /* Disposição */
+        justify-content: space-between;
+        margin: 13vw 7vw 10vw;
+    }
+}
+
+
+/* Título */
+.projeto__title {
+
+    /* Fonte */
+    font-size: 33px;
+    font-weight: 700;
+
+    /* Espaçamento */
+    line-height: 4.5vw;
+    margin: 0 0 31px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .projeto__title {
+        /* Fonte */
+        font-size: 4.25vw;
+
+        /* Espaçamento */
+        margin: 0 0 2vw;
+    }
+}
+
+
+/* Texto */
+.projeto__text {
+
+    /* Tamanho */
+    width: 100%;
+    line-height: 26px;
+
+    /* Fonte */
+    font-size: 15px;
+
+    /* Margens */
+    margin-bottom: 4.5em;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .projeto__text {
+        /* Fonte */
+        font-size: 1vw;
+        line-height: 2vw;
+        /* Tamanho */
+        margin-bottom: 0;
+        width: 39vw;
+    }
+}
+
+
+/* Ilustração */
+.projeto__image {
+
+    /* Tamanho */
+    width: 534px;
+    max-width: 100%;
+
+    /* Espaçamento */
+    margin-top: 2.5vw;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .projeto__image {
+        height: 27vw;
+        width: auto;
+    }
+}

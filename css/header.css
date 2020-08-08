@@ -1,0 +1,59 @@
+/* Topo da página */
+.header {
+
+    /* Fixação ao topo da página */
+    position: fixed;
+    top: 0;
+
+    /* Tamanho */
+    width: 94vw;
+    height: 6vw;
+    min-height: 82px;
+
+    /* Cor, sombra e efeito */
+    background-color: #0a1744ad;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0px 3px 29px #5538EE1F;
+
+    /* Disposição dos elementos do bloco */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.8vw 0;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .header {
+        padding: 0 3vw 0;
+    }
+}
+
+
+/* Logo */
+.header__logo {
+
+    /* Tamanho */
+    height: 2.5vw;
+    min-height: 23px;
+}
+
+
+/* Conjunto de botões de navegação */
+.header__navigation {
+
+    /* Disposição dos elementos */
+    display: flex;
+    justify-content: space-between;
+    margin-right: .1vw;
+
+    /* Tamanho (relevante para o espaçamento dos botões) */
+    width: 19vw;
+    min-width: 184px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .header__navigation {
+        min-width: 225px;
+    }
+}

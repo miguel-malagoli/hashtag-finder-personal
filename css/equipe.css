@@ -1,0 +1,43 @@
+/* Bloco da equipe */
+.equipe {
+
+    /* Margens */
+    margin: 0 3.5vw 64px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .equipe {
+        margin: 0 0 7.5vw;
+    }
+}
+
+
+/* Título */
+.equipe__title {
+
+    /* Fonte */
+    font-size: 27px;
+
+    /* Tamanho */
+    margin: 0 4vw 45px;
+    line-height: 3vw;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .equipe__title {
+        /* Fonte */
+        font-size: 2.8vw;
+        /* Margem */
+        margin: 0 10.8vw 5.5vw;
+    }
+}
+
+
+/* Lista de membros */
+.equipe__members {
+
+    /* Disposição */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

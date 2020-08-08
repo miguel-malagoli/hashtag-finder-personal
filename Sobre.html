@@ -38,7 +38,49 @@
         <!--Link para a fonte-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap">
         <!--Link para o stylesheet da página-->
-        <link rel="stylesheet" href="sobre.css" type="text/css">
+        <link rel="stylesheet" href="css/header.css" type="text/css">
+        <link rel="stylesheet" href="css/button.css" type="text/css">
+        <link rel="stylesheet" href="css/projeto.css" type="text/css">
+        <link rel="stylesheet" href="css/equipe.css" type="text/css">
+        <link rel="stylesheet" href="css/profile.css" type="text/css">
+        <link rel="stylesheet" href="css/footer.css" type="text/css">
+
+        <!--Estilo base da página-->
+        <style>
+
+            /* Corpo da página - Fundo e características gerais */
+            body {
+
+                /* Remoção da margem padrão */
+                margin: 0;
+
+                /* Fundos: */
+                    /* Gradiente (meio) */
+                background: linear-gradient(180deg, #0A174400 0%, #0A1744 100%) no-repeat,
+                    /* Imagem (topo, por baixo do gradiente) */
+                    url(imagens/about-hero-bg.jpg) no-repeat,
+                    /* Cor (página inteira) */
+                    #0A1744;
+
+                /* Tamanho e posição do gradiente e imagem */
+                background-size:  100vw 42vmax, auto 100vmax;
+                background-position:  0% 58.5vmax, 0% 0%;
+
+                /* Padrão de texto (fonte e cor) */
+                color: #FCFCFC;
+                font-family: 'Rubik', Arial, sans-serif;
+            }
+
+            /* Ajuste de responsividade */
+            @media only screen and (min-width: 1200px) {
+                body {
+                    /* Fundos: */
+                    background-size:  100vw 36vw, contain;
+                    background-position:  0% 18vw, 0% -2vw;
+                }
+            }
+
+        </style>
 
     </head>
 
