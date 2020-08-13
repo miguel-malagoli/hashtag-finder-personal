@@ -102,7 +102,7 @@
             <nav class="header__navigation">
                 <!--Atalho para a página principal-->
                 <a href="index.html">
-                    <button class="button button_theme_light">
+                    <button class="header__button button button_theme_light">
                         <img
                             class="button__icon"
                             src="imagens/icon-home.svg"
@@ -112,7 +112,7 @@
                 </a>
                 <!--Atalho para a página do projeto-->
                 <a href="Sobre.html">
-                    <button class="button button_theme_light">
+                    <button class="header__button button button_theme_light">
                         <img
                             class="button__icon"
                             src="imagens/icon-info-circle.svg"
@@ -123,6 +123,29 @@
             </nav>
 
         </header>
+
+        <!--Container-->
+        <div class="login">
+            <!--Caixa de login-->
+            <div class="login__box">
+
+                <!--Título da caixa-->
+                <h1 class="login__title">Login</h1>
+
+                <!--Formulário de login-->
+                <form class="login__form" method="post">
+                    <!--Input de usuário-->
+                    <input class="login__input" type="text" name="username" placeholder="Usuário">
+                    <!--Input de senha-->
+                    <input class="login__input" type="password" name="password" placeholder="Senha">
+
+                    <!--Botão de envio-->
+                    <button class="login__button button button_theme_light" type="submit">
+                        ACESSAR
+                    </button>
+                </form>
+            </div>
+        </div>
 
     </body>
 

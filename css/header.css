@@ -57,3 +57,28 @@
         min-width: 225px;
     }
 }
+
+
+/* Bloco botão adaptado ao header */
+.header__button.button {
+
+    /* Tamanho */
+    width: 8.5vw;
+    min-width: 86px;
+    height: 2.5vw;
+    min-height: 30px;
+
+    /* Texto */
+    font-family: 'Rubik', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .header__button.button {
+        /* Texto */
+        font-size: .85vw;
+        /* Tamanho */
+        min-width: 106px;
+    }
+}
