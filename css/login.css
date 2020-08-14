@@ -1,0 +1,100 @@
+/* Bloco de login */
+.login {
+
+    /* Cobrir a página inteira */
+    min-height: 100vh;
+    min-width: 100vw;
+
+    /* Centralizar a caixa de login */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Caixa contendo os outros elementos */
+.login__box {
+
+    /* Aparência, sombra e efeito */
+    background-color: #0a174463;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0px 3px 29px #5538EE1F;
+    border-radius: 14px;
+
+    /* Espaço e tamanho */
+    box-sizing: border-box;
+    width: 360px;
+    max-width: 82vw;
+    padding: 62px 34px;
+    margin: 132px 20px 50px;
+    z-index: -1;
+}
+
+
+/* Título */
+.login__title {
+
+    /* Fonte */
+    color: #72EFDB;
+    font-size: 34px;
+
+    /* Espaçamento */
+    margin: 0 0 40px;
+    text-align: center;
+}
+
+
+/* Container do formulário */
+.login__form {
+
+    /* Organização dos elementos */
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+/* Campos de texto */
+.login__input {
+
+    /* Tamanho e espaçamento */
+    width: 100%;
+    line-height: 30px;
+    margin-bottom: 60px;
+
+    /* Cores */
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px #e9e9f057;
+
+    /* Fonte */
+    font-size: 17px;
+    color: white;
+}
+/* Texto placeholder */
+.login__input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+.login__input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+/* Foco */
+.login__input:focus {
+    outline: none;
+    border-bottom: solid 2px white;
+    transition: border .4s ease;
+}
+
+
+/* Modificações ao bloco button quando usado dentro do bloco login */
+.login__button.button {
+
+    width: 213px;
+    height: 58px;
+    margin-top: 8px;
+
+    font-size: 18px;
+    letter-spacing: 0.03em;
+}
