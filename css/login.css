@@ -3,7 +3,7 @@
 
     /* Cobrir a página inteira */
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
 
     /* Centralizar a caixa de login */
     display: flex;
@@ -16,10 +16,9 @@
 .login__box {
 
     /* Aparência, sombra e efeito */
-    background-color: #0a174463;
+    background-color: #00092963;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    box-shadow: 0px 3px 29px #5538EE1F;
     border-radius: 14px;
 
     /* Espaço e tamanho */
@@ -28,7 +27,14 @@
     max-width: 82vw;
     padding: 62px 34px;
     margin: 132px 20px 50px;
-    z-index: -1;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .login__box {
+        width: 28.8vw;
+        padding: 6.8vw 2.5vw;
+        margin: 102px 20px 50px;
+    }
 }
 
 
@@ -42,6 +48,12 @@
     /* Espaçamento */
     margin: 0 0 40px;
     text-align: center;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .login__title {
+        margin: 0 0 3.9vw;
+    }
 }
 
 
@@ -73,6 +85,12 @@
     font-size: 17px;
     color: white;
 }
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .login__input {
+        margin-bottom: 2.3vw;
+    }
+}
 /* Texto placeholder */
 .login__input::placeholder {
     color: rgba(255, 255, 255, 0.75);
@@ -91,10 +109,18 @@
 /* Modificações ao bloco button quando usado dentro do bloco login */
 .login__button.button {
 
+    /* Tamanho */
     width: 213px;
     height: 58px;
     margin-top: 8px;
 
+    /* Fonte */
     font-size: 18px;
     letter-spacing: 0.03em;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .login__button.button {
+        margin-top: 1.1vw;
+    }
 }

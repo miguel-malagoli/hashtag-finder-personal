@@ -4,6 +4,7 @@
     /* Fixação ao topo da página */
     position: fixed;
     top: 0;
+    z-index: 1;
 
     /* Tamanho */
     width: 94vw;
