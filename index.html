@@ -39,13 +39,54 @@
         <!--Link para a fonte-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap">
         <!--Link para o stylesheet da página-->
-        <link rel="stylesheet" href="index.css" type="text/css">
+        <link rel="stylesheet" href="css/header.css" type="text/css">
+        <link rel="stylesheet" href="css/button.css" type="text/css">
+        <link rel="stylesheet" href="css/search.css" type="text/css">
+        <link rel="stylesheet" href="css/footer.css" type="text/css">
+
+        <!--Estilo base da página-->
+        <style>
+
+            /* Corpo da página - Fundo e características gerais */
+            body {
+
+                /* Remoção da margem padrão */
+                margin: 0;
+
+                /* Forçar o body a cobrir a tela */
+                min-width: 100%;
+
+                /* Fundos: */
+                    /* Gradiente (meio) */
+                background: linear-gradient(180deg, #0A174400 0%, #0A1744 100%) no-repeat,
+                    /* Imagem (topo, por baixo do gradiente) */
+                    url(imagens/hero-bg.jpg) no-repeat,
+                    /* Cor (página inteira) */
+                    #0A1744;
+                /* Tamanho e posição do gradiente e imagem */
+                background-size: 100vw 100px, 1920px;
+                background-position: 0% 980px, 62% 0%;
+
+                /* Padrão de texto (fonte e cor) */
+                color: #FCFCFC;
+                font-family: 'Rubik', Arial, sans-serif;
+            }
+            /* Ajuste de responsividade */
+            @media only screen and (min-width: 1200px) {
+                body {
+                    /* Fundos: */
+                    background-size: 100vw 36vw, 100vw;
+                    background-position: 0% 21vw, 0% 0%;
+                }
+            }
+
+        </style>
 
     </head>
 
 
     <!--Corpo da página, com estilo provisório-->
-    <body style="background-color: #0A1744;">
+    <body>
 
         <!--Topo da página - Bloco "Header"-->
         <header class="header">
@@ -84,6 +125,33 @@
             </nav>
 
         </header>
+
+
+        <!--Bloco de busca-->
+        <main class="search">
+
+            <!--Título e texto-->
+            <h1 class="search__title">Encontre hashtags de maneira fácil.</h1>
+            <p class="search__text">
+                Digite o que deseja no campo de buscas e confira os resultados do Twitter abaixo
+            </p>
+
+            <!--Barra de busca-->
+            <div class="search__bar">
+                <!--Ícone de busca-->
+                <img
+                    class="search__icon"
+                    src="imagens/icon-search.svg"
+                >
+                <!--Input de texto-->
+                <input
+                    class="search__input"
+                    type="text"
+                    name="search"
+                    placeholder="Buscar..."
+                >
+            </div>
+        </main>
 
 
         <!--Rodapé da página-->
