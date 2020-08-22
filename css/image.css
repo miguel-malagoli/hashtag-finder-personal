@@ -1,0 +1,49 @@
+/* Remoção do estilo padrão dos elementos <a> */
+a {
+    text-decoration: none;
+}
+
+
+/* Imagem do twitter */
+.image {
+    /* Background padrão, substituído pela imagem carregada por javascript */
+    background-color: #1E3E7B;
+    border-radius: 21px;
+
+    /* Tamanho */
+    box-sizing: border-box;
+    width: 15vw;
+    height: 15vw;
+    padding: 21px;
+    margin: 1.9vw 1.2vw;
+
+    /* Organização dos elementos */
+    /* Também remove o display padrão de <li>, que contém o ponto */
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+
+
+/* "Postado por" */
+.image__text {
+    /* Fonte */
+    font-size: 17px;
+    /* Espaço */
+    margin: 0 0 .3em;
+}
+
+
+/* Nome de usuário */
+.image__user {
+    /* Fonte */
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: white;
+    /* Espaço */
+    margin: 0;
+
+    /* Vazamento */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,84 @@
+/* Remoção do estilo padrão dos elementos <a> */
+a {
+    text-decoration: none;
+}
+
+
+/* Bloco de tweet */
+.tweet {
+    /* Organização e espaço */
+    display: flex;
+    padding: 2.2vw 2.6vw;
+    margin: 0 0 2vw;
+    /* Tamanho */
+    box-sizing: border-box;
+    width: 100%;
+    /* Cor e borda */
+    background-color: #1E3E7B17;
+    border: 1px solid #FFFFFF24;
+    border-radius: 15px;
+}
+
+
+/* Foto de perfil */
+.tweet__image {
+    /* Tamanho */
+    width: 4.3vw;
+    height: 4.3vw;
+    /* Arredondamento */
+    border-radius: 50%;
+}
+
+
+/* Resto do tweet */
+.tweet__main {
+    /* Tamanho e espaço */
+    flex-grow: 1;
+    margin: 0 0 0 1.5vw;
+}
+
+
+/* Primeira linha */
+.tweet__author {
+    display: flex;
+    align-items: baseline;
+}
+
+
+/* Nome de display de usuário */
+.tweet__user {
+    /* Fonte */
+    font-size: 1.4vw;
+    font-weight: bold;
+    /* Espaço */
+    margin: 0 .9vw 0 0;
+}
+
+
+/* @ do usuário */
+.tweet__at {
+    /* Fonte */
+    font-size: 1.1vw;
+    color: rgba(255, 255, 255, .43);
+    /* Espaço */
+    margin: 0;
+}
+
+
+/* Organização e espaço */
+.tweet__text {
+    /* Fonte */
+    font-size: 1vw;
+    /* Espaço */
+    margin: .3vw 0 1.2vw;
+}
+
+
+/* Link para o Twitter */
+.tweet__link {
+    /* Fonte */
+    color: #72EFDB;
+    font-size: 1.1vw;
+    /* Espaço */
+    margin: 0;
+}
