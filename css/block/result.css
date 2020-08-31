@@ -126,6 +126,8 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    /* Itens de flex tem "min-width: auto" por padrão. Isso previne que o item cresça para conter o texto */
+    min-width: 0;
 }
 /* Modificador boolean */
 .result__tweetList_hidden {
