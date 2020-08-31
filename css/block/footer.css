@@ -1,8 +1,8 @@
 /* Bloco do rodapé */
 .footer {
 
-    /* Cor e tamanho */
-    background-color: #1e3f7bbd;
+    /* Tamanho */
+    position: relative;
     padding: 42px 0;
 }
 /* Ajuste de responsividade */
@@ -10,6 +10,19 @@
     .footer {
         padding: 4.5vw 0;
     }
+}
+.footer::before {
+    /* Cobrir todo o fundo do bloco footer */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Cor de fundo com transparência */
+    background-color: var(--theme-neutral);
+    opacity: .75;
 }
 
 

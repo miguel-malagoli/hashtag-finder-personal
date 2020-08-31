@@ -6,6 +6,8 @@ a {
 
 /* Bloco de tweet */
 .tweet {
+    /* Posição relativa, somente para o uso de ::before e ::after */
+    position: relative;
     /* Organização e espaço */
     display: flex;
     padding: 5vw 3.6vw;
@@ -13,10 +15,6 @@ a {
     /* Tamanho */
     box-sizing: border-box;
     width: 100%;
-    /* Cor e borda */
-    background-color: #1E3E7B17;
-    border: 1px solid #FFFFFF24;
-    border-radius: 15px;
 }
 /* Responsividade em telas maiores */
 @media only screen and (min-width: 1200px) {
@@ -24,6 +22,39 @@ a {
         padding: 2.2vw 2.6vw;
         margin: 0 0 2vw;
     }
+}
+/* Fundo */
+.tweet::before {
+    /* Cobrir todo o fundo do bloco tweet */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Cor de fundo com transparência */
+    background-color: var(--theme-texto);
+    border: 1px solid var(--theme-texto);
+    opacity: .015;
+    border-radius: 15px;
+}
+/* Borda */
+.tweet::after {
+    /* Cobrir todo o fundo do bloco tweet */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Cor de borda com transparência */
+    border: 1px solid var(--theme-texto);
+    opacity: .15;
+    border-radius: 15px;
+    /* Não bloquear o cursor */
+    pointer-events: none;
 }
 
 
@@ -91,7 +122,8 @@ a {
 .tweet__at {
     /* Fonte */
     font-size: 10px;
-    color: rgba(255, 255, 255, .43);
+    color: var(--theme-texto);
+    opacity: .45;
     /* Espaço */
     margin: 0;
 }
@@ -122,7 +154,8 @@ a {
 /* Link para o Twitter */
 .tweet__link {
     /* Fonte */
-    color: #72EFDB;
+    color: var(--theme-light);
+    transition: color .4s ease;
     font-size: 10px;
     /* Espaço */
     margin: 0;
@@ -132,4 +165,7 @@ a {
     .tweet__link {
         font-size: 1.1vw;
     }
+}
+.tweet__link:hover {
+    color: var(--theme-light-glow);
 }

@@ -11,7 +11,7 @@ a {
         /* Gradiente preto para esclarecer o texto */
         linear-gradient(180deg, #00000000 0%, #000000c4 100%) no-repeat,
         /* Fundo padrão, substituído pela imagem carregada por javascript */
-        #1E3E7B;
+        var(--theme-neutral);
     background-size: 100% 40%;
     background-position: 0% 100%;
     border-radius: 21px;

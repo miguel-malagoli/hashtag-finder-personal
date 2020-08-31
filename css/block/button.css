@@ -53,17 +53,17 @@
 
 /* Tema claro para botões */
 .button_theme_light {
-    background-color: #72EFDB;
-    color: #0B1741;
+    background-color: var(--theme-light);
+    color: var(--theme-fundo);
 }
 .button_theme_light:hover {
-    background-color: #b3fff4;
+    background-color: var(--theme-light-glow);
 }
 /* Tema escuro para botões */
 .button_theme_dark {
-    background-color: #1E3E7B;
-    color: #FFFFFF;
+    background-color: var(--theme-neutral);
+    color: var(--theme-texto);
 }
 .button_theme_dark:hover {
-    background-color: #32589c;
+    background-color: var(--theme-neutral-glow);
 }

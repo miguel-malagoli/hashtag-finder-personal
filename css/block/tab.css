@@ -3,16 +3,16 @@
     /* Fonte */
     font-size: 16px;
     font-weight: 500;
-    color: white;
+    color: var(--theme-texto);
     /* Fundo e borda */
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--theme-texto);
 }
 
 
 /* Aba selecionada */
 .tab_selected {
-    color: #72EFDB;
-    border-bottom: 3px solid #72EFDB;
+    color: var(--theme-light);
+    border-bottom: 3px solid var(--theme-light);
 }

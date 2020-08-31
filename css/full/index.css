@@ -1,3 +1,15 @@
+/* Paleta de cores */
+:root {
+    --theme-fundo: #0A1744;
+    --theme-texto: #FCFCFC;
+    --theme-light: #72EFDB;
+    --theme-light-glow: #B3FFF4;
+    --theme-neutral: #1E3E7B;
+    --theme-neutral-glow: #32589C;
+    --theme-shadow: #5538EE1F;
+}
+
+
 /* Corpo da página - Fundo e características gerais */
 body {
 
@@ -9,17 +21,17 @@ body {
 
     /* Fundos: */
         /* Gradiente (meio) */
-    background: linear-gradient(180deg, transparent 0%, #0A1744 100%) no-repeat,
+    background: linear-gradient(180deg, transparent 0%, var(--theme-fundo) 100%) no-repeat,
         /* Imagem (topo, por baixo do gradiente) */
         url(../../imagens/hero-bg.jpg) no-repeat,
         /* Cor (página inteira) */
-        #0A1744;
+        var(--theme-fundo);
     /* Tamanho e posição do gradiente e imagem */
-    background-size: 100vw 100px, 1920px;
-    background-position: 0% 980px, 62% 0%;
+    background-size: 100vw 100px, 1500px;
+    background-position: 0% 743px, 62% 0%;
 
     /* Padrão de texto (fonte e cor) */
-    color: #FCFCFC;
+    color: var(--theme-texto);
     font-family: 'Rubik', Arial, sans-serif;
 }
 /* Ajuste de responsividade */
@@ -47,11 +59,10 @@ body {
     height: 6vw;
     min-height: 82px;
 
-    /* Cor, sombra e efeito */
-    background-color: #0a1744ad;
+    /* Sombra e efeito */
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    box-shadow: 0px 3px 29px #5538EE1F;
+    box-shadow: 0px 3px 29px var(--theme-shadow);
 
     /* Disposição dos elementos do bloco */
     display: flex;
@@ -64,6 +75,20 @@ body {
     .header {
         padding: 0 3vw 0;
     }
+}
+/* Fundo */
+.header::before {
+    /* Cobrir todo o fundo do bloco header */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Cor de fundo com transparência */
+    background-color: var(--theme-fundo);
+    opacity: .7;
 }
 
 
@@ -178,19 +203,19 @@ body {
 
 /* Tema claro para botões */
 .button_theme_light {
-    background-color: #72EFDB;
-    color: #0B1741;
+    background-color: var(--theme-light);
+    color: var(--theme-fundo);
 }
 .button_theme_light:hover {
-    background-color: #b3fff4;
+    background-color: var(--theme-light-glow);
 }
 /* Tema escuro para botões */
 .button_theme_dark {
-    background-color: #1E3E7B;
-    color: #FFFFFF;
+    background-color: var(--theme-neutral);
+    color: var(--theme-texto);
 }
 .button_theme_dark:hover {
-    background-color: #32589c;
+    background-color: var(--theme-neutral-glow);
 }
 
 
@@ -264,7 +289,8 @@ body {
     box-sizing: border-box;
     padding: 0 21px;
     /* Cor e forma */
-    background-color: #1E3E7B;
+    background-color: var(--theme-neutral);
+    transition: background-color .4s ease, box-shadow .4s ease;
     border-radius: 9999px;
     /* Disposição */
     display: flex;
@@ -281,6 +307,16 @@ body {
         padding: 0 3.1vw;
         max-width: none;
     }
+}
+/* Transições quando focado ou percorrido pelo cursor */
+.search__bar:focus-within {
+    /* Cor e sombra */
+    background-color: var(--theme-neutral-glow);
+    box-shadow: 0px 3px 29px var(--theme-shadow);
+}
+.search__bar:hover {
+    /* Apenas sombra */
+    box-shadow: 0px 3px 29px var(--theme-shadow);
 }
 
 
@@ -310,14 +346,16 @@ body {
     /* Cores */
     background-color: transparent;
     border: none;
-    color: white;
+    color: var(--theme-texto);
 }
 /* Texto placeholder */
 .search__input::placeholder {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--theme-texto);
+    opacity: .75;
 }
 .search__input::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--theme-texto);
+    opacity: .75;
 }
 /* Foco */
 .search__input:focus {
@@ -485,18 +523,18 @@ body {
     /* Fonte */
     font-size: 16px;
     font-weight: 500;
-    color: white;
+    color: var(--theme-texto);
     /* Fundo e borda */
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--theme-texto);
 }
 
 
 /* Aba selecionada */
 .tab_selected {
-    color: #72EFDB;
-    border-bottom: 3px solid #72EFDB;
+    color: var(--theme-light);
+    border-bottom: 3px solid var(--theme-light);
 }
 
 
@@ -515,7 +553,7 @@ a {
         /* Gradiente preto para esclarecer o texto */
         linear-gradient(180deg, #00000000 0%, #000000c4 100%) no-repeat,
         /* Fundo padrão, substituído pela imagem carregada por javascript */
-        #1E3E7B;
+        var(--theme-neutral);
     background-size: 100% 40%;
     background-position: 0% 100%;
     border-radius: 21px;
@@ -574,6 +612,8 @@ a {
 
 /* Bloco de tweet */
 .tweet {
+    /* Posição relativa, somente para o uso de ::before e ::after */
+    position: relative;
     /* Organização e espaço */
     display: flex;
     padding: 5vw 3.6vw;
@@ -581,10 +621,6 @@ a {
     /* Tamanho */
     box-sizing: border-box;
     width: 100%;
-    /* Cor e borda */
-    background-color: #1E3E7B17;
-    border: 1px solid #FFFFFF24;
-    border-radius: 15px;
 }
 /* Responsividade em telas maiores */
 @media only screen and (min-width: 1200px) {
@@ -592,6 +628,38 @@ a {
         padding: 2.2vw 2.6vw;
         margin: 0 0 2vw;
     }
+}
+/* Fundo */
+.tweet::before {
+    /* Cobrir todo o fundo do bloco tweet */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Cor de fundo com transparência */
+    background-color: var(--theme-texto);
+    border: 1px solid var(--theme-texto);
+    opacity: .015;
+    border-radius: 15px;
+}
+/* Borda */
+.tweet::after {
+    /* Cobrir todo o fundo do bloco tweet */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Cor de borda com transparência */
+    border: 1px solid var(--theme-texto);
+    opacity: .15;
+    border-radius: 15px;
+    /* Não bloquear o cursor */
+    pointer-events: none;
 }
 
 
@@ -659,7 +727,8 @@ a {
 .tweet__at {
     /* Fonte */
     font-size: 10px;
-    color: rgba(255, 255, 255, .43);
+    color: var(--theme-texto);
+    opacity: .45;
     /* Espaço */
     margin: 0;
 }
@@ -690,7 +759,8 @@ a {
 /* Link para o Twitter */
 .tweet__link {
     /* Fonte */
-    color: #72EFDB;
+    color: var(--theme-light);
+    transition: color .4s ease;
     font-size: 10px;
     /* Espaço */
     margin: 0;
@@ -701,6 +771,9 @@ a {
         font-size: 1.1vw;
     }
 }
+.tweet__link:hover {
+    color: var(--theme-light-glow);
+}
 
 
 /* ----------------------- BLOCO FOOTER ----------------------- */
@@ -708,8 +781,8 @@ a {
 /* Bloco do rodapé */
 .footer {
 
-    /* Cor e tamanho */
-    background-color: #1e3f7bbd;
+    /* Tamanho */
+    position: relative;
     padding: 42px 0;
 }
 /* Ajuste de responsividade */
@@ -717,6 +790,19 @@ a {
     .footer {
         padding: 4.5vw 0;
     }
+}
+.footer::before {
+    /* Cobrir todo o fundo do bloco footer */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Cor de fundo com transparência */
+    background-color: var(--theme-neutral);
+    opacity: .75;
 }
 
 
