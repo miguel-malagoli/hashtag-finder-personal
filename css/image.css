@@ -6,17 +6,17 @@ a {
 
 /* Imagem do twitter */
 .image {
-    /* Background padrão, substituído pela imagem carregada por javascript */
-    background-color: #1E3E7B;
+    /* Background */
+    background:
+        /* Gradiente preto para esclarecer o texto */
+        linear-gradient(180deg, #00000000 0%, #000000c4 100%) no-repeat,
+        /* Fundo padrão, substituído pela imagem carregada por javascript */
+        #1E3E7B;
+    background-size: 100% 40%;
+    background-position: 0% 100%;
     border-radius: 21px;
-
     /* Tamanho */
     box-sizing: border-box;
-    width: 15vw;
-    height: 15vw;
-    padding: 21px;
-    margin: 1.9vw 1.2vw;
-
     /* Organização dos elementos */
     /* Também remove o display padrão de <li>, que contém o ponto */
     display: flex;
@@ -28,22 +28,33 @@ a {
 /* "Postado por" */
 .image__text {
     /* Fonte */
-    font-size: 17px;
+    font-size: 10px;
     /* Espaço */
     margin: 0 0 .3em;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .image__text {
+        font-size: 17px;
+    }
 }
 
 
 /* Nome de usuário */
 .image__user {
     /* Fonte */
-    font-size: 1.1vw;
+    font-size: 12px;
     font-weight: bold;
     color: white;
     /* Espaço */
     margin: 0;
-
     /* Vazamento */
     overflow: hidden;
     text-overflow: ellipsis;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .image__user {
+        font-size: 1.1vw;
+    }
 }

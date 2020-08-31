@@ -1,0 +1,140 @@
+/* Bloco dos resultados */
+.result {
+    /* Espaço */
+    margin: 0 4.8vw 78px;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .result {
+        margin: 0 0 6.5vw;
+    }
+}
+
+
+/* Abas de tipo de resultado */
+.result__type {
+    /* Espaço */
+    display: flex;
+    margin: 0 0 36px;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .result__type {
+        /* Esconder em telas maiores */
+        display: none;
+    }
+}
+
+
+/* Bloco aba aplicado dentro desse bloco */
+.result__tab.tab {
+    /* Tamanho */
+    width: 100%;
+    line-height: 32px;
+}
+
+
+/* Feedback da pesquisa */
+.result__text {
+    /* Fonte */
+    font-size: 16px;
+    /* Espaço */
+    text-align: center;
+    margin: 0 24px 32px;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .result__text {
+        font-size: 1.7vw;
+        margin: 0 0 5.3vw;
+    }
+}
+
+
+/* Lista de resultados */
+.result__box {
+    /* Organização */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /* Espaço */
+    box-sizing: border-box;
+    padding: 0;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .result__box {
+        flex-flow: row;
+        padding: 0 8.3vw;
+        align-items: flex-start;
+    }
+}
+
+
+/* Grid de imagens */
+.result__imageList {
+    /* Organização */
+    display: grid;
+    grid-template-columns: 47% 47%;
+    row-gap: 3.8vw;
+    /* Tamanho */
+    width: 90.4vmin;
+    max-width: 800px;
+    /* Remoção do espaçamento padrão de <ul> */
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+}
+/* Modificador boolean */
+.result__imageList_hidden {
+    /* Esconder quando o modificador estiver presente */
+    display: none;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .result__imageList {
+        width: 32.2vw;
+        column-gap: 2.3vw;
+        row-gap: 1.9vw;
+        /* Ignorar o display: none do modificador em telas maiores */
+        display: grid;
+    }
+}
+
+
+/* Bloco de imagem aplicado ao bloco de resultados */
+.result__image.image {
+    width: 42vmin;
+    height: 42vmin;
+    max-width: 376px;
+    max-height: 376px;
+    padding: 14px;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .result__image.image {
+        width: 15vw;
+        height: 15vw;
+        padding: 21px;
+    }
+}
+
+
+/* Lista de tweets */
+.result__tweetList {
+    /* Espaço */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+/* Modificador boolean */
+.result__tweetList_hidden {
+    /* Esconder quando o modificador estiver presente */
+    display: none;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .result__tweetList {
+        margin: 0 0 0 3.7vw;
+    }
+}

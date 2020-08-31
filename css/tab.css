@@ -1,0 +1,18 @@
+/* Bloco de aba selecionável */
+.tab {
+    /* Fonte */
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    /* Fundo e borda */
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+
+/* Aba selecionada */
+.tab_selected {
+    color: #72EFDB;
+    border-bottom: 3px solid #72EFDB;
+}

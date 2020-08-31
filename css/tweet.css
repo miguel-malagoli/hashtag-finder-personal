@@ -8,8 +8,8 @@ a {
 .tweet {
     /* Organização e espaço */
     display: flex;
-    padding: 2.2vw 2.6vw;
-    margin: 0 0 2vw;
+    padding: 5vw 3.6vw;
+    margin: 0 0 30px;
     /* Tamanho */
     box-sizing: border-box;
     width: 100%;
@@ -18,15 +18,29 @@ a {
     border: 1px solid #FFFFFF24;
     border-radius: 15px;
 }
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .tweet {
+        padding: 2.2vw 2.6vw;
+        margin: 0 0 2vw;
+    }
+}
 
 
 /* Foto de perfil */
 .tweet__image {
     /* Tamanho */
-    width: 4.3vw;
-    height: 4.3vw;
+    width: 13vw;
+    height: 13vw;
     /* Arredondamento */
     border-radius: 50%;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .tweet__image {
+        width: 4.3vw;
+        height: 4.3vw;
+    }
 }
 
 
@@ -34,7 +48,15 @@ a {
 .tweet__main {
     /* Tamanho e espaço */
     flex-grow: 1;
-    margin: 0 0 0 1.5vw;
+    margin: 0 0 0 3.4vw;
+    /* Itens de flex tem "min-width: auto" por padrão. Isso previne que o item cresça para conter o texto */
+    min-width: 0;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .tweet__main {
+        margin: 0 0 0 1.5vw;
+    }
 }
 
 
@@ -48,29 +70,52 @@ a {
 /* Nome de display de usuário */
 .tweet__user {
     /* Fonte */
-    font-size: 1.4vw;
+    font-size: 14px;
     font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     /* Espaço */
-    margin: 0 .9vw 0 0;
+    margin: 0 2.2vw 0 0;
+    overflow: hidden;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .tweet__user {
+        font-size: 1.4vw;
+        margin: 0 .9vw 0 0;
+    }
 }
 
 
 /* @ do usuário */
 .tweet__at {
     /* Fonte */
-    font-size: 1.1vw;
+    font-size: 10px;
     color: rgba(255, 255, 255, .43);
     /* Espaço */
     margin: 0;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .tweet__at {
+        font-size: 1.1vw;
+    }
 }
 
 
 /* Organização e espaço */
 .tweet__text {
     /* Fonte */
-    font-size: 1vw;
+    font-size: 12px;
     /* Espaço */
-    margin: .3vw 0 1.2vw;
+    margin: 1.2vw 0 2.6vw;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .tweet__text {
+        font-size: 1vw;
+        margin: .3vw 0 1.2vw;
+    }
 }
 
 
@@ -78,7 +123,13 @@ a {
 .tweet__link {
     /* Fonte */
     color: #72EFDB;
-    font-size: 1.1vw;
+    font-size: 10px;
     /* Espaço */
     margin: 0;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .tweet__link {
+        font-size: 1.1vw;
+    }
 }
