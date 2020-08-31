@@ -44,6 +44,21 @@ body {
 }
 
 
+/* Barra de scroll */
+body::-webkit-scrollbar {
+    /* Largura */
+    width: 1em;
+}
+body::-webkit-scrollbar-track {
+    /* Fundo */
+    background-color: var(--theme-neutral);
+}
+body::-webkit-scrollbar-thumb {
+    /* Guia */
+    background-color: var(--theme-fundo);
+}
+
+
 /* ----------------------- BLOCO HEADER ----------------------- */
 
 /* Topo da página */

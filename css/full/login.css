@@ -1,3 +1,15 @@
+/* Paleta de cores */
+:root {
+    --theme-fundo: #0A1744;
+    --theme-texto: #FCFCFC;
+    --theme-light: #72EFDB;
+    --theme-light-glow: #B3FFF4;
+    --theme-neutral: #1E3E7B;
+    --theme-neutral-glow: #32589C;
+    --theme-shadow: #5538EE1F;
+}
+
+
 /* Corpo da página - Fundo e características gerais */
 body {
 
@@ -6,30 +18,45 @@ body {
 
     /* Forçar o body a cobrir a tela */
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
 
     /* Fundos: */
         /* Gradiente (meio) */
-    background: linear-gradient(180deg, #0A174400 0%, #0A1744 100%) no-repeat,
+    background: linear-gradient(180deg, transparent 0%, var(--theme-fundo) 100%) no-repeat,
         /* Imagem (topo, por baixo do gradiente) */
-        url(imagens/hero-bg.jpg) no-repeat,
+        url(../../imagens/hero-bg.jpg) no-repeat,
         /* Cor (página inteira) */
-        #0A1744;
+        var(--theme-fundo);
     /* Tamanho e posição do gradiente e imagem */
-    background-size:  100vw 42vmax, auto 100vmax;
-    background-position:  0% 58.5vmax, 0% 0%;
+    background-size: 100vw 100px, 1920px;
+    background-position: 0% 980px, 62% 0%;
 
     /* Padrão de texto (fonte e cor) */
-    color: #FCFCFC;
+    color: var(--theme-texto);
     font-family: 'Rubik', Arial, sans-serif;
 }
 /* Ajuste de responsividade */
 @media only screen and (min-width: 1200px) {
     body {
         /* Fundos: */
-        background-size:  100vw 36vw, cover;
-        background-position:  0% 18vw, 0% 0%;
+        background-size: 100vw 36vw, 100vw;
+        background-position: 0% 21vw, 0% 0%;
     }
+}
+
+
+/* Barra de scroll */
+body::-webkit-scrollbar {
+    /* Largura */
+    width: 1em;
+}
+body::-webkit-scrollbar-track {
+    /* Fundo */
+    background-color: var(--theme-neutral);
+}
+body::-webkit-scrollbar-thumb {
+    /* Guia */
+    background-color: var(--theme-fundo);
 }
 
 
@@ -41,17 +68,17 @@ body {
     /* Fixação ao topo da página */
     position: fixed;
     top: 0;
+    z-index: 1;
 
     /* Tamanho */
     width: 94vw;
     height: 6vw;
     min-height: 82px;
 
-    /* Cor, sombra e efeito */
-    background-color: #0a1744ad;
+    /* Sombra e efeito */
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    box-shadow: 0px 3px 29px #5538EE1F;
+    box-shadow: 0px 3px 29px var(--theme-shadow);
 
     /* Disposição dos elementos do bloco */
     display: flex;
@@ -64,6 +91,20 @@ body {
     .header {
         padding: 0 3vw 0;
     }
+}
+/* Fundo */
+.header::before {
+    /* Cobrir todo o fundo do bloco header */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Cor de fundo com transparência */
+    background-color: var(--theme-fundo);
+    opacity: .7;
 }
 
 
@@ -92,6 +133,31 @@ body {
 @media only screen and (min-width: 1200px) {
     .header__navigation {
         min-width: 225px;
+    }
+}
+
+
+/* Bloco botão adaptado ao header */
+.header__button.button {
+
+    /* Tamanho */
+    width: 8.5vw;
+    min-width: 86px;
+    height: 2.5vw;
+    min-height: 30px;
+
+    /* Texto */
+    font-family: 'Rubik', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .header__button.button {
+        /* Texto */
+        font-size: .85vw;
+        /* Tamanho */
+        min-width: 106px;
     }
 }
 
@@ -153,325 +219,167 @@ body {
 
 /* Tema claro para botões */
 .button_theme_light {
-    background-color: #72EFDB;
-    color: #0B1741;
+    background-color: var(--theme-light);
+    color: var(--theme-fundo);
 }
 .button_theme_light:hover {
-    background-color: #b3fff4;
+    background-color: var(--theme-light-glow);
 }
 /* Tema escuro para botões */
 .button_theme_dark {
-    background-color: #1E3E7B;
-    color: #FFFFFF;
+    background-color: var(--theme-neutral);
+    color: var(--theme-texto);
 }
 .button_theme_dark:hover {
-    background-color: #32589c;
+    background-color: var(--theme-neutral-glow);
 }
 
 
-/* ----------------------- BLOCO PROJETO ----------------------- */
+/* ----------------------- BLOCO LOGIN ----------------------- */
 
-/* Bloco do projeto */
-.projeto {
+/* Bloco de login */
+.login {
 
-    /* Disposição dos elementos */
+    /* Cobrir a página inteira */
+    min-height: 100vh;
+    min-width: 100%;
+
+    /* Centralizar a caixa de login */
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-
-    /* Margens */
-    margin: 127px 7vw 50px;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .projeto {
-        /* Disposição */
-        justify-content: space-between;
-        margin: 13vw 7vw 10vw;
-    }
-}
-
-
-/* Título */
-.projeto__title {
-
-    /* Fonte */
-    font-size: 33px;
-    font-weight: 700;
-
-    /* Espaçamento */
-    line-height: 4.5vw;
-    margin: 0 0 31px;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .projeto__title {
-        /* Fonte */
-        font-size: 4.25vw;
-
-        /* Espaçamento */
-        margin: 0 0 2vw;
-    }
-}
-
-
-/* Texto */
-.projeto__text {
-
-    /* Tamanho */
-    width: 100%;
-    line-height: 26px;
-
-    /* Fonte */
-    font-size: 15px;
-
-    /* Margens */
-    margin-bottom: 4.5em;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .projeto__text {
-        /* Fonte */
-        font-size: 1vw;
-        line-height: 2vw;
-        /* Tamanho */
-        margin-bottom: 0;
-        width: 39vw;
-    }
-}
-
-
-/* Ilustração */
-.projeto__image {
-
-    /* Tamanho */
-    width: 534px;
-    max-width: 100%;
-
-    /* Espaçamento */
-    margin-top: 2.5vw;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .projeto__image {
-        height: 27vw;
-        width: auto;
-    }
-}
-
-
-/* ----------------------- BLOCO EQUIPE ----------------------- */
-
-/* Bloco da equipe */
-.equipe {
-
-    /* Margens */
-    margin: 0 3.5vw 64px;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .equipe {
-        margin: 0 10vw 9.5vw;
-    }
-}
-
-
-/* Título */
-.equipe__title {
-
-    /* Fonte */
-    font-size: 27px;
-
-    /* Tamanho */
-    margin: 0 4vw 45px;
-    line-height: 3vw;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .equipe__title {
-        /* Fonte */
-        font-size: 2.8vw;
-        /* Margem */
-        margin: 0 .8vw 5.5vw;
-    }
-}
-
-
-/* Lista de membros */
-.equipe__members {
-
-    /* Disposição */
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-/* Disposição - Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .equipe__members {
-        justify-content: space-between;
-    }
-}
-
-
-/* ----------------------- BLOCO PROFILE ----------------------- */
-
-/* Bloco dos perfis */
-.profile {
-
-    /* Cor e forma */
-    background-color: #0B1A49;
-    border: solid 1px #FFFFFF24;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px #5538EE14;
-
-    /* Tamanho */
-    width: 400px;
-    max-width: 100%;
-    margin: 0 2% 46px;
-
-    /* Texto */
-    text-align: center;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .profile {
-        width: 18.2vw;
-        margin: 0;
-    }
-}
-
-
-/* Foto de perfil */
-.profile__image {
-
-    /* Tamanho e forma */
-    width: 204px;
-    max-width: 43vw;
-    height: 204px;
-    max-height: 43vw;
-    object-fit: cover;
-    border-radius: 50%;
-
-    /* Margem */
-    margin: 36px 4.5vw 22px;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .profile__image {
-        width: 9.25vw;
-        height: 9.25vw;
-        margin: 1.8vw 4.5vw 1.1vw;
-    }
-}
-
-
-/* Nome */
-.profile__name {
-
-    /* Fonte */
-    color: #72EFDB;
-    font-size: 28px;
-
-    /* Margem */
-    margin: 0 .75vw 22px;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .profile__name {
-        font-size: 1.4vw;
-        margin: 0 .75vw 1.1vw;
-    }
-}
-
-
-/* Descrição */
-.profile__text {
-
-    /* Fonte */
-    font-size: 19px;
-    font-weight: 300;
-    color: #D9D9D9;
-
-    /* Espaçamento */
-    line-height: 25px;
-    margin: 0 36px 24px;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .profile__text {
-        font-size: 1vw;
-        line-height: 1.3vw;
-        margin: 0 1vw 2vw;
-    }
-}
-
-
-/* Lista de contatos */
-.profile__links {
-
-    /* Disposição */
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+}
 
-    /* Tamanho */
-    width: 34%;
-    margin: 0 33% 38px;
+
+/* Caixa contendo os outros elementos */
+.login__box {
+
+    /* Posição relativa para o uso de ::before */
+    position: relative;
+
+    /* Aparência, sombra e efeito */
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 14px;
+
+    /* Espaço e tamanho */
+    box-sizing: border-box;
+    width: 360px;
+    max-width: 82vw;
+    padding: 62px 34px;
+    margin: 132px 20px 50px;
 }
 /* Ajuste de responsividade */
 @media only screen and (min-width: 1200px) {
-    .profile__links {
-        width: 7vw;
-        margin: 0 5.6vw 1.8vw;
+    .login__box {
+        width: 28.8vw;
+        padding: 6.8vw 2.5vw;
+        margin: 102px 20px 50px;
     }
 }
-
-
-/* Ícones de contato */
-.profile__icon {
-
-    /* Tamanho */
-    height: 24px;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .profile__icon {
-        height: 1.25vw;
-    }
-}
-
-
-/* ----------------------- BLOCO FOOTER ----------------------- */
-
-/* Bloco do rodapé */
-.footer {
-
-    /* Cor e tamanho */
-    background-color: #1e3f7bbd;
-    padding: 42px 0;
-}
-/* Ajuste de responsividade */
-@media only screen and (min-width: 1200px) {
-    .footer {
-        padding: 4.5vw 0;
-    }
+/* Fundo com transparência */
+.login__box::before {
+    /* Cobrir todo o elemento */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Cor de fundo com transparência */
+    background-color: var(--theme-fundo);
+    opacity: .3;
+    border-radius: 14px;
 }
 
 
-/* Texto */
-.footer__text {
+/* Título */
+.login__title {
 
     /* Fonte */
-    font-size: 12px;
-    font-weight: 300;
+    color: var(--theme-light);
+    font-size: 34px;
 
     /* Espaçamento */
+    margin: 0 0 40px;
     text-align: center;
-    margin: 0;
 }
 /* Ajuste de responsividade */
 @media only screen and (min-width: 1200px) {
-    .footer__text {
-        font-size: 1.3vw;
+    .login__title {
+        margin: 0 0 3.9vw;
+    }
+}
+
+
+/* Container do formulário */
+.login__form {
+
+    /* Organização dos elementos */
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+/* Campos de texto */
+.login__input {
+
+    /* Tamanho e espaçamento */
+    width: 100%;
+    line-height: 30px;
+    margin-bottom: 60px;
+
+    /* Cores */
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px #e9e9f057;
+
+    /* Fonte */
+    font-size: 17px;
+    color: var(--theme-texto);
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .login__input {
+        margin-bottom: 2.3vw;
+    }
+}
+/* Texto placeholder */
+.login__input::placeholder {
+    color: var(--theme-texto);
+    opacity: .75;
+}
+.login__input::-webkit-input-placeholder {
+    color: var(--theme-texto);
+    opacity: .75;
+}
+/* Foco */
+.login__input:focus {
+    outline: none;
+    border-bottom: solid 2px var(--theme-texto);
+    transition: border .4s ease;
+}
+
+
+/* Modificações ao bloco button quando usado dentro do bloco login */
+.login__button.button {
+
+    /* Tamanho */
+    width: 213px;
+    height: 58px;
+    margin-top: 8px;
+
+    /* Fonte */
+    font-size: 18px;
+    letter-spacing: 0.03em;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .login__button.button {
+        margin-top: 1.1vw;
     }
 }
