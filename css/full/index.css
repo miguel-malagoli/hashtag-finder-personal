@@ -1,12 +1,12 @@
 /* Paleta de cores */
 :root {
-    --theme-fundo: #0A1744;
-    --theme-texto: #FCFCFC;
-    --theme-light: #72EFDB;
-    --theme-light-glow: #B3FFF4;
-    --theme-neutral: #1E3E7B;
-    --theme-neutral-glow: #32589C;
-    --theme-shadow: #5538EE1F;
+    --theme-fundo: 10, 23, 68;
+    --theme-texto: 252, 252, 252;
+    --theme-light: 114, 239, 219;
+    --theme-light-glow: 219, 255, 250;
+    --theme-neutral: 30, 62, 123;
+    --theme-neutral-glow: 57, 117, 167;
+    --theme-shadow: 85, 56, 238;
 }
 
 
@@ -21,17 +21,17 @@ body {
 
     /* Fundos: */
         /* Gradiente (meio) */
-    background: linear-gradient(180deg, transparent 0%, var(--theme-fundo) 100%) no-repeat,
+    background: linear-gradient(180deg, transparent 0%, rgb(var(--theme-fundo)) 100%) no-repeat,
         /* Imagem (topo, por baixo do gradiente) */
         url(../../imagens/hero-bg.jpg) no-repeat,
         /* Cor (página inteira) */
-        var(--theme-fundo);
+        rgb(var(--theme-fundo));
     /* Tamanho e posição do gradiente e imagem */
     background-size: 100vw 100px, 1500px;
     background-position: 0% 743px, 62% 0%;
 
     /* Padrão de texto (fonte e cor) */
-    color: var(--theme-texto);
+    color: rgb(var(--theme-texto));
     font-family: 'Rubik', Arial, sans-serif;
 }
 /* Ajuste de responsividade */
@@ -51,15 +51,22 @@ body::-webkit-scrollbar {
 }
 body::-webkit-scrollbar-track {
     /* Fundo */
-    background-color: var(--theme-neutral);
+    background-color: rgb(var(--theme-neutral));
 }
 body::-webkit-scrollbar-thumb {
     /* Guia */
-    background-color: var(--theme-fundo);
+    background-color: rgb(var(--theme-fundo));
 }
 
 
 /* ----------------------- BLOCO HEADER ----------------------- */
+
+/* Foco */
+.header a:focus {
+    outline: rgb(var(--theme-texto)) auto 1px;
+    outline-offset: 8px;
+}
+
 
 /* Topo da página */
 .header {
@@ -74,10 +81,11 @@ body::-webkit-scrollbar-thumb {
     height: 6vw;
     min-height: 82px;
 
-    /* Sombra e efeito */
+    /* Cor, sombra e efeito */
+    background-color: rgba(var(--theme-fundo), 0.7);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    box-shadow: 0px 3px 29px var(--theme-shadow);
+    box-shadow: 0px 3px 29px rgba(var(--theme-shadow), 0.1);
 
     /* Disposição dos elementos do bloco */
     display: flex;
@@ -90,20 +98,6 @@ body::-webkit-scrollbar-thumb {
     .header {
         padding: 0 3vw 0;
     }
-}
-/* Fundo */
-.header::before {
-    /* Cobrir todo o fundo do bloco header */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    /* Cor de fundo com transparência */
-    background-color: var(--theme-fundo);
-    opacity: .7;
 }
 
 
@@ -198,6 +192,13 @@ body::-webkit-scrollbar-thumb {
         min-width: 106px;
     }
 }
+/* Foco - ocorre quando selecionado por TAB, mas também ativa depois de clicado */
+.button:focus {
+    /* Remoção da outline padrão */
+    outline: none;
+    /* Remoção da transição, para que a mudança de foco por TAB seja mais visível */
+    transition: none;
+}
 
 
 /* Ícone de botâo */
@@ -218,19 +219,19 @@ body::-webkit-scrollbar-thumb {
 
 /* Tema claro para botões */
 .button_theme_light {
-    background-color: var(--theme-light);
-    color: var(--theme-fundo);
+    background-color: rgb(var(--theme-light));
+    color: rgb(var(--theme-fundo));
 }
-.button_theme_light:hover {
-    background-color: var(--theme-light-glow);
+.button_theme_light:hover, .button_theme_light:focus {
+    background-color: rgb(var(--theme-light-glow));
 }
 /* Tema escuro para botões */
 .button_theme_dark {
-    background-color: var(--theme-neutral);
-    color: var(--theme-texto);
+    background-color: rgb(var(--theme-neutral));
+    color: rgb(var(--theme-texto));
 }
-.button_theme_dark:hover {
-    background-color: var(--theme-neutral-glow);
+.button_theme_dark:hover, .button_theme_dark:focus {
+    background-color: rgb(var(--theme-neutral-glow));
 }
 
 
@@ -304,7 +305,7 @@ body::-webkit-scrollbar-thumb {
     box-sizing: border-box;
     padding: 0 21px;
     /* Cor e forma */
-    background-color: var(--theme-neutral);
+    background-color: rgb(var(--theme-neutral));
     transition: background-color .4s ease, box-shadow .4s ease;
     border-radius: 9999px;
     /* Disposição */
@@ -324,14 +325,10 @@ body::-webkit-scrollbar-thumb {
     }
 }
 /* Transições quando focado ou percorrido pelo cursor */
-.search__bar:focus-within {
+.search__bar:focus-within, .search__bar:hover {
     /* Cor e sombra */
-    background-color: var(--theme-neutral-glow);
-    box-shadow: 0px 3px 29px var(--theme-shadow);
-}
-.search__bar:hover {
-    /* Apenas sombra */
-    box-shadow: 0px 3px 29px var(--theme-shadow);
+    background-color: rgb(var(--theme-neutral-glow));
+    box-shadow: 0px 3px 29px rgba(var(--theme-shadow), 0.2);
 }
 
 
@@ -361,16 +358,14 @@ body::-webkit-scrollbar-thumb {
     /* Cores */
     background-color: transparent;
     border: none;
-    color: var(--theme-texto);
+    color: rgb(var(--theme-texto));
 }
 /* Texto placeholder */
 .search__input::placeholder {
-    color: var(--theme-texto);
-    opacity: .75;
+    color: rgba(var(--theme-texto), 0.75);
 }
 .search__input::-webkit-input-placeholder {
-    color: var(--theme-texto);
-    opacity: .75;
+    color: rgba(var(--theme-texto), 0.75);
 }
 /* Foco */
 .search__input:focus {
@@ -536,28 +531,41 @@ body::-webkit-scrollbar-thumb {
 /* Bloco de aba selecionável */
 .tab {
     /* Fonte */
+    position: relative;
     font-size: 16px;
     font-weight: 500;
-    color: var(--theme-texto);
+    color: rgb(var(--theme-texto));
     /* Fundo e borda */
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid var(--theme-texto);
+    border-bottom: 1px solid rgb(var(--theme-texto));
+    /* Transição */
+    transition: color .4s ease, border .4s ease;
+}
+/* Foco */
+.tab:focus {
+    outline: none;
+    background-color: rgba(var(--theme-texto), 0.1);
 }
 
 
 /* Aba selecionada */
 .tab_selected {
-    color: var(--theme-light);
-    border-bottom: 3px solid var(--theme-light);
+    color: rgb(var(--theme-light));
+    border-bottom: 3px solid rgb(var(--theme-light));
 }
 
 
 /* ----------------------- BLOCO IMAGEM ----------------------- */
 
 /* Remoção do estilo padrão dos elementos <a> */
-a {
+.image a {
     text-decoration: none;
+}
+/* Outline customizada */
+.image a:focus {
+    outline: rgb(var(--theme-texto)) auto 1px;
+    outline-offset: 4px;
 }
 
 
@@ -568,7 +576,7 @@ a {
         /* Gradiente preto para esclarecer o texto */
         linear-gradient(180deg, #00000000 0%, #000000c4 100%) no-repeat,
         /* Fundo padrão, substituído pela imagem carregada por javascript */
-        var(--theme-neutral);
+        rgb(var(--theme-neutral));
     background-size: 100% 40%;
     background-position: 0% 100%;
     border-radius: 21px;
@@ -619,9 +627,14 @@ a {
 
 /* ----------------------- BLOCO TWEET ----------------------- */
 
-/* Remoção do estilo padrão dos elementos <a> */
-a {
+/* Remoção do estilo padrão do <a> */
+.tweet a {
     text-decoration: none;
+}
+/* Outline customizada */
+.tweet a:focus {
+    outline: rgb(var(--theme-texto)) auto 1px;
+    outline-offset: 4px;
 }
 
 
@@ -636,6 +649,10 @@ a {
     /* Tamanho */
     box-sizing: border-box;
     width: 100%;
+    /* Cores */
+    background-color: rgba(var(--theme-texto), 0.015);
+    border: 1px solid rgba(var(--theme-texto), 0.15);
+    border-radius: 15px;
 }
 /* Responsividade em telas maiores */
 @media only screen and (min-width: 1200px) {
@@ -643,38 +660,6 @@ a {
         padding: 2.2vw 2.6vw;
         margin: 0 0 2vw;
     }
-}
-/* Fundo */
-.tweet::before {
-    /* Cobrir todo o fundo do bloco tweet */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    /* Cor de fundo com transparência */
-    background-color: var(--theme-texto);
-    border: 1px solid var(--theme-texto);
-    opacity: .015;
-    border-radius: 15px;
-}
-/* Borda */
-.tweet::after {
-    /* Cobrir todo o fundo do bloco tweet */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Cor de borda com transparência */
-    border: 1px solid var(--theme-texto);
-    opacity: .15;
-    border-radius: 15px;
-    /* Não bloquear o cursor */
-    pointer-events: none;
 }
 
 
@@ -742,7 +727,7 @@ a {
 .tweet__at {
     /* Fonte */
     font-size: 10px;
-    color: var(--theme-texto);
+    color: rgb(var(--theme-texto));
     opacity: .45;
     /* Espaço */
     margin: 0;
@@ -774,7 +759,7 @@ a {
 /* Link para o Twitter */
 .tweet__link {
     /* Fonte */
-    color: var(--theme-light);
+    color: rgb(var(--theme-light));
     transition: color .4s ease;
     font-size: 10px;
     /* Espaço */
@@ -787,7 +772,7 @@ a {
     }
 }
 .tweet__link:hover {
-    color: var(--theme-light-glow);
+    color: rgb(var(--theme-light-glow));
 }
 
 
@@ -795,7 +780,8 @@ a {
 
 /* Bloco do rodapé */
 .footer {
-
+    /* Fundo */
+    background-color: rgba(var(--theme-neutral), 0.75);
     /* Tamanho */
     position: relative;
     padding: 42px 0;
@@ -805,19 +791,6 @@ a {
     .footer {
         padding: 4.5vw 0;
     }
-}
-.footer::before {
-    /* Cobrir todo o fundo do bloco footer */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    /* Cor de fundo com transparência */
-    background-color: var(--theme-neutral);
-    opacity: .75;
 }
 
 

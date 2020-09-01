@@ -1,3 +1,10 @@
+/* Foco */
+.header a:focus {
+    outline: rgb(var(--theme-texto)) auto 1px;
+    outline-offset: 8px;
+}
+
+
 /* Topo da página */
 .header {
 
@@ -11,10 +18,11 @@
     height: 6vw;
     min-height: 82px;
 
-    /* Sombra e efeito */
+    /* Cor, sombra e efeito */
+    background-color: rgba(var(--theme-fundo), 0.7);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    box-shadow: 0px 3px 29px var(--theme-shadow);
+    box-shadow: 0px 3px 29px rgba(var(--theme-shadow), 0.1);
 
     /* Disposição dos elementos do bloco */
     display: flex;
@@ -27,20 +35,6 @@
     .header {
         padding: 0 3vw 0;
     }
-}
-/* Fundo */
-.header::before {
-    /* Cobrir todo o fundo do bloco header */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    /* Cor de fundo com transparência */
-    background-color: var(--theme-fundo);
-    opacity: .7;
 }
 
 

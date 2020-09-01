@@ -42,7 +42,7 @@
         <!--Link para a fonte-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap">
         <!--Link para o stylesheet da página-->
-        <link rel="stylesheet" href="css/mini/index.css" type="text/css">
+        <link rel="stylesheet" href="css/full/index.css" type="text/css">
 
     </head>
 
@@ -65,7 +65,8 @@
             <!--Botões de navegação-->
             <nav class="header__navigation">
                 <!--Atalho para a página do projeto-->
-                <a href="Sobre.html">
+                <!--TabIndex negativo para evitar a navegação redundante entre o <a> e o <button> do link-->
+                <a href="Sobre.html" tabindex="-1">
                     <button class="button button_theme_light">
                         <img
                             class="button__icon"
@@ -75,7 +76,8 @@
                     </button>
                 </a>
                 <!--Atalho para a página de login-->
-                <a href="Login.html">
+                <!--TabIndex negativo para evitar a navegação redundante entre o <a> e o <button> do link-->
+                <a href="Login.html" tabindex="-1">
                     <button class="button button_theme_dark">
                         <img
                             class="button__icon"

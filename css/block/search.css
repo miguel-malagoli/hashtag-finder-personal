@@ -66,7 +66,7 @@
     box-sizing: border-box;
     padding: 0 21px;
     /* Cor e forma */
-    background-color: var(--theme-neutral);
+    background-color: rgb(var(--theme-neutral));
     transition: background-color .4s ease, box-shadow .4s ease;
     border-radius: 9999px;
     /* Disposição */
@@ -86,14 +86,10 @@
     }
 }
 /* Transições quando focado ou percorrido pelo cursor */
-.search__bar:focus-within {
+.search__bar:focus-within, .search__bar:hover {
     /* Cor e sombra */
-    background-color: var(--theme-neutral-glow);
-    box-shadow: 0px 3px 29px var(--theme-shadow);
-}
-.search__bar:hover {
-    /* Apenas sombra */
-    box-shadow: 0px 3px 29px var(--theme-shadow);
+    background-color: rgb(var(--theme-neutral-glow));
+    box-shadow: 0px 3px 29px rgba(var(--theme-shadow), 0.2);
 }
 
 
@@ -123,16 +119,14 @@
     /* Cores */
     background-color: transparent;
     border: none;
-    color: var(--theme-texto);
+    color: rgb(var(--theme-texto));
 }
 /* Texto placeholder */
 .search__input::placeholder {
-    color: var(--theme-texto);
-    opacity: .75;
+    color: rgba(var(--theme-texto), 0.75);
 }
 .search__input::-webkit-input-placeholder {
-    color: var(--theme-texto);
-    opacity: .75;
+    color: rgba(var(--theme-texto), 0.75);
 }
 /* Foco */
 .search__input:focus {

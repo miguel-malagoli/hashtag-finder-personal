@@ -1,18 +1,26 @@
 /* Bloco de aba selecionável */
 .tab {
     /* Fonte */
+    position: relative;
     font-size: 16px;
     font-weight: 500;
-    color: var(--theme-texto);
+    color: rgb(var(--theme-texto));
     /* Fundo e borda */
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid var(--theme-texto);
+    border-bottom: 1px solid rgb(var(--theme-texto));
+    /* Transição */
+    transition: color .4s ease, border .4s ease;
+}
+/* Foco */
+.tab:focus {
+    outline: none;
+    background-color: rgba(var(--theme-texto), 0.1);
 }
 
 
 /* Aba selecionada */
 .tab_selected {
-    color: var(--theme-light);
-    border-bottom: 3px solid var(--theme-light);
+    color: rgb(var(--theme-light));
+    border-bottom: 3px solid rgb(var(--theme-light));
 }

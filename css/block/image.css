@@ -1,6 +1,11 @@
 /* Remoção do estilo padrão dos elementos <a> */
-a {
+.image a {
     text-decoration: none;
+}
+/* Outline customizada */
+.image a:focus {
+    outline: rgb(var(--theme-texto)) auto 1px;
+    outline-offset: 4px;
 }
 
 
@@ -11,7 +16,7 @@ a {
         /* Gradiente preto para esclarecer o texto */
         linear-gradient(180deg, #00000000 0%, #000000c4 100%) no-repeat,
         /* Fundo padrão, substituído pela imagem carregada por javascript */
-        var(--theme-neutral);
+        rgb(var(--theme-neutral));
     background-size: 100% 40%;
     background-position: 0% 100%;
     border-radius: 21px;

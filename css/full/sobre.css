@@ -129,6 +129,10 @@ body {
         min-width: 106px;
     }
 }
+/* Remoção da outline padrão */
+.button:focus {
+    outline: none;
+}
 
 
 /* Ícone de botâo */
@@ -152,7 +156,7 @@ body {
     background-color: #72EFDB;
     color: #0B1741;
 }
-.button_theme_light:hover {
+.button_theme_light:hover, .button_theme_light:focus {
     background-color: #b3fff4;
 }
 /* Tema escuro para botões */
@@ -160,7 +164,7 @@ body {
     background-color: #1E3E7B;
     color: #FFFFFF;
 }
-.button_theme_dark:hover {
+.button_theme_dark:hover, .button_theme_dark:focus {
     background-color: #32589c;
 }
 
