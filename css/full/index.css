@@ -650,7 +650,7 @@ body::-webkit-scrollbar-thumb {
     box-sizing: border-box;
     width: 100%;
     /* Cores */
-    background-color: rgba(var(--theme-texto), 0.015);
+    background-color: rgba(var(--theme-texto), 0.01);
     border: 1px solid rgba(var(--theme-texto), 0.15);
     border-radius: 15px;
 }

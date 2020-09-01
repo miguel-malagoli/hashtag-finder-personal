@@ -1,3 +1,15 @@
+/* Paleta de cores */
+:root {
+    --theme-fundo: 10, 23, 68;
+    --theme-texto: 252, 252, 252;
+    --theme-light: 114, 239, 219;
+    --theme-light-glow: 219, 255, 250;
+    --theme-neutral: 30, 62, 123;
+    --theme-neutral-glow: 57, 117, 167;
+    --theme-shadow: 85, 56, 238;
+}
+
+
 /* Corpo da página - Fundo e características gerais */
 body {
 
@@ -6,19 +18,21 @@ body {
 
     /* Fundos: */
         /* Gradiente (meio) */
-    background: linear-gradient(180deg, #0A174400 0%, #0A1744 100%) no-repeat,
+    background: linear-gradient(180deg, rgba(var(--theme-fundo), 0) 0%, rgb(var(--theme-fundo)) 100%) no-repeat,
         /* Imagem (topo, por baixo do gradiente) */
-        url(imagens/about-hero-bg.jpg) no-repeat,
+        url(../../imagens/about-hero-bg.jpg) no-repeat,
         /* Cor (página inteira) */
-        #0A1744;
+        rgb(var(--theme-fundo));
+
     /* Tamanho e posição do gradiente e imagem */
     background-size:  100vw 42vmax, auto 100vmax;
     background-position:  0% 58.5vmax, 0% 0%;
 
     /* Padrão de texto (fonte e cor) */
-    color: #FCFCFC;
+    color: rgb(var(--theme-texto));
     font-family: 'Rubik', Arial, sans-serif;
 }
+
 /* Ajuste de responsividade */
 @media only screen and (min-width: 1200px) {
     body {
@@ -29,7 +43,29 @@ body {
 }
 
 
+/* Barra de scroll */
+body::-webkit-scrollbar {
+    /* Largura */
+    width: 1em;
+}
+body::-webkit-scrollbar-track {
+    /* Fundo */
+    background-color: rgb(var(--theme-neutral));
+}
+body::-webkit-scrollbar-thumb {
+    /* Guia */
+    background-color: rgb(var(--theme-fundo));
+}
+
+
 /* ----------------------- BLOCO HEADER ----------------------- */
+
+/* Foco */
+.header a:focus {
+    outline: rgb(var(--theme-texto)) auto 1px;
+    outline-offset: 8px;
+}
+
 
 /* Topo da página */
 .header {
@@ -37,6 +73,7 @@ body {
     /* Fixação ao topo da página */
     position: fixed;
     top: 0;
+    z-index: 1;
 
     /* Tamanho */
     width: 94vw;
@@ -44,10 +81,10 @@ body {
     min-height: 82px;
 
     /* Cor, sombra e efeito */
-    background-color: #0a1744ad;
+    background-color: rgba(var(--theme-fundo), 0.7);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    box-shadow: 0px 3px 29px #5538EE1F;
+    box-shadow: 0px 3px 29px rgba(var(--theme-shadow), 0.1);
 
     /* Disposição dos elementos do bloco */
     display: flex;
@@ -92,6 +129,31 @@ body {
 }
 
 
+/* Bloco botão adaptado ao header */
+.header__button.button {
+
+    /* Tamanho */
+    width: 8.5vw;
+    min-width: 86px;
+    height: 2.5vw;
+    min-height: 30px;
+
+    /* Texto */
+    font-family: 'Rubik', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .header__button.button {
+        /* Texto */
+        font-size: .85vw;
+        /* Tamanho */
+        min-width: 106px;
+    }
+}
+
+
 /* ----------------------- BLOCO BUTTON ----------------------- */
 
 /* Botão */
@@ -129,9 +191,12 @@ body {
         min-width: 106px;
     }
 }
-/* Remoção da outline padrão */
+/* Foco - ocorre quando selecionado por TAB, mas também ativa depois de clicado */
 .button:focus {
+    /* Remoção da outline padrão */
     outline: none;
+    /* Remoção da transição, para que a mudança de foco por TAB seja mais visível */
+    transition: none;
 }
 
 
@@ -153,19 +218,19 @@ body {
 
 /* Tema claro para botões */
 .button_theme_light {
-    background-color: #72EFDB;
-    color: #0B1741;
+    background-color: rgb(var(--theme-light));
+    color: rgb(var(--theme-fundo));
 }
 .button_theme_light:hover, .button_theme_light:focus {
-    background-color: #b3fff4;
+    background-color: rgb(var(--theme-light-glow));
 }
 /* Tema escuro para botões */
 .button_theme_dark {
-    background-color: #1E3E7B;
-    color: #FFFFFF;
+    background-color: rgb(var(--theme-neutral));
+    color: rgb(var(--theme-texto));
 }
 .button_theme_dark:hover, .button_theme_dark:focus {
-    background-color: #32589c;
+    background-color: rgb(var(--theme-neutral-glow));
 }
 
 
@@ -309,14 +374,21 @@ body {
 
 /* ----------------------- BLOCO PROFILE ----------------------- */
 
+/* Customização do foco automático nos <a> */
+.profile a:focus {
+    outline: rgb(var(--theme-texto)) auto 1px;
+    outline-offset: 4px;
+}
+
+
 /* Bloco dos perfis */
 .profile {
 
     /* Cor e forma */
-    background-color: #0B1A49;
-    border: solid 1px #FFFFFF24;
+    background-color: rgba(var(--theme-texto), 0.01);
+    border: solid 1px rgba(var(--theme-texto), 0.15);
     border-radius: 10px;
-    box-shadow: 0px 5px 10px #5538EE14;
+    box-shadow: 0px 5px 10px rgba(var(--theme-shadow), 0.1);
 
     /* Tamanho */
     width: 400px;
@@ -363,7 +435,7 @@ body {
 .profile__name {
 
     /* Fonte */
-    color: #72EFDB;
+    color: rgb(var(--theme-light));
     font-size: 28px;
 
     /* Margem */
@@ -384,7 +456,7 @@ body {
     /* Fonte */
     font-size: 19px;
     font-weight: 300;
-    color: #D9D9D9;
+    color: rgba(var(--theme-texto), 0.8);
 
     /* Espaçamento */
     line-height: 25px;
@@ -439,9 +511,10 @@ body {
 
 /* Bloco do rodapé */
 .footer {
-
-    /* Cor e tamanho */
-    background-color: #1e3f7bbd;
+    /* Fundo */
+    background-color: rgba(var(--theme-neutral), 0.75);
+    /* Tamanho */
+    position: relative;
     padding: 42px 0;
 }
 /* Ajuste de responsividade */
