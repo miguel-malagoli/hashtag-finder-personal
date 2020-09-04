@@ -740,7 +740,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-/* Organização e espaço */
+/* Corpo do tweet */
 .tweet__text {
     /* Fonte */
     font-size: 12px;
@@ -764,6 +764,8 @@ body::-webkit-scrollbar-thumb {
     font-size: 10px;
     /* Espaço */
     margin: 0;
+    /* Por fazer parte de um flex item (tweet__main), se o display for block ele cobre toda a largura do tweet__main */
+    display: inline;
 }
 /* Responsividade em telas maiores */
 @media only screen and (min-width: 1200px) {
