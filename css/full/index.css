@@ -12,13 +12,14 @@
 
 /* Corpo da página - Fundo e características gerais */
 body {
-
+    /* Organização (usado principalmente para manter o footer no fim da janela) */
+    display: flex;
+    flex-flow: column;
     /* Remoção da margem padrão */
     margin: 0;
-
     /* Forçar o body a cobrir a tela */
     min-width: 100%;
-
+    min-height: 100vh;
     /* Fundos: */
         /* Gradiente (meio) */
     background: linear-gradient(180deg, transparent 0%, rgb(var(--theme-fundo)) 100%) no-repeat,
@@ -239,6 +240,8 @@ body::-webkit-scrollbar-thumb {
 
 /* Bloco de busca */
 .search {
+    /* Empurrar o footer para o fim da página */
+    flex-grow: 1;
     /* Espaçamento */
     margin: 135px 7.5vw 304px;
     /* Disposição */
@@ -332,6 +335,33 @@ body::-webkit-scrollbar-thumb {
 }
 
 
+.search__feedback {
+    /* Tamanho */
+    width: 100%;
+    max-width: 560px;
+    /* Fonte */
+    font-size: 14px;
+    /* Disposição */
+    align-self: center;
+    text-align: center;
+    /* Não afetar o flow vertical da página: */
+    max-height: 0;
+    overflow-y: visible;
+    margin: 12px 0 -12px;
+    padding: 0;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .search__feedback {
+        /* Tamanho */
+        width: 52vw;
+        max-width: none;
+        /* Fonte */
+        font-size: 1.5vw;
+    }
+}
+
+
 /* Ícone */
 .search__icon {
     /* Tamanho e espaço */
@@ -384,13 +414,18 @@ body::-webkit-scrollbar-thumb {
 
 /* Bloco dos resultados */
 .result {
+    /* Esconder até que seja revelado por script */
+    display: none;
+    overflow: hidden;
     /* Espaço */
-    margin: 0 4.8vw 78px;
+    margin: 0 0 78px;
+    padding: 0 4.8vw 0;
 }
 /* Responsividade em telas maiores */
 @media only screen and (min-width: 1200px) {
     .result {
         margin: 0 0 6.5vw;
+        padding: 0;
     }
 }
 
@@ -571,6 +606,11 @@ body::-webkit-scrollbar-thumb {
 
 /* Imagem do twitter */
 .image {
+    /* Esconder até ser revelado por script */
+    position: relative;
+    right: 100px;
+    opacity: 0;
+    max-height: 0;
     /* Background */
     background:
         /* Gradiente preto para esclarecer o texto */
@@ -587,6 +627,14 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
+}
+
+
+.image.image_visible {
+    right: 0;
+    opacity: 1;
+    transition: right .4s ease, opacity .4s ease;
+    max-height: none;
 }
 
 
@@ -640,8 +688,11 @@ body::-webkit-scrollbar-thumb {
 
 /* Bloco de tweet */
 .tweet {
-    /* Posição relativa, somente para o uso de ::before e ::after */
+    /* Posição relativa e ocultação para a transição */
     position: relative;
+    left: 100px;
+    opacity: 0;
+    max-height: 0;
     /* Organização e espaço */
     display: flex;
     padding: 5vw 3.6vw;
@@ -663,11 +714,20 @@ body::-webkit-scrollbar-thumb {
 }
 
 
+.tweet.tweet_visible {
+    left: 0;
+    opacity: 1;
+    transition: left .4s ease, opacity .4s ease;
+    max-height: none;
+}
+
+
 /* Foto de perfil */
 .tweet__image {
     /* Tamanho */
     width: 13vw;
     height: 13vw;
+    flex-shrink: 0;
     /* Arredondamento */
     border-radius: 50%;
 }
@@ -740,10 +800,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-/* Organização e espaço */
+/* Corpo do tweet */
 .tweet__text {
     /* Fonte */
     font-size: 12px;
+    overflow-wrap: break-word;
     /* Espaço */
     margin: 1.2vw 0 2.6vw;
 }
@@ -764,6 +825,8 @@ body::-webkit-scrollbar-thumb {
     font-size: 10px;
     /* Espaço */
     margin: 0;
+    /* Por fazer parte de um flex item (tweet__main), se o display for block ele cobre toda a largura do tweet__main */
+    display: inline;
 }
 /* Responsividade em telas maiores */
 @media only screen and (min-width: 1200px) {
@@ -783,7 +846,6 @@ body::-webkit-scrollbar-thumb {
     /* Fundo */
     background-color: rgba(var(--theme-neutral), 0.75);
     /* Tamanho */
-    position: relative;
     padding: 42px 0;
 }
 /* Ajuste de responsividade */

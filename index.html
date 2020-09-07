@@ -44,6 +44,8 @@
         <!--Link para o stylesheet da página-->
         <link rel="stylesheet" href="css/full/index.css" type="text/css">
 
+        <script src="js/twitterSearch.js" type="text/javascript" defer></script>
+
     </head>
 
 
@@ -113,8 +115,11 @@
                     type="text"
                     name="search"
                     placeholder="Buscar..."
+                    spellcheck="false"
+                    maxlength="140"
                 >
             </div>
+            <p class="search__feedback"></p>
         </main>
 
 
@@ -131,7 +136,7 @@
 
             <!--Texto de feedback da busca-->
             <p class="result__text">
-                Exibindo os 10 resultados mais recentes para #<span>natureza</span>
+                Exibindo os 10 resultados mais recentes para #<span id="hashtag">natureza</span>
             </p>
 
             <!--Resultados da busca-->
@@ -143,8 +148,8 @@
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <a href="https://www.twitter.com/">
-                            <p class="image__user" title="@twitterusernamefnsdtjdtjsdgjstj">@twitterusernamefnsdtjdtjsdgjstj</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
                         </a>
                     </li>
 
@@ -152,63 +157,81 @@
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <p class="image__user">@twitterusername</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
+                        </a>
                     </li>
 
                     <!--Imagem 3-->
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <p class="image__user">@twitterusername</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
+                        </a>
                     </li>
 
                     <!--Imagem 4-->
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <p class="image__user">@twitterusername</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
+                        </a>
                     </li>
 
                     <!--Imagem 5-->
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <p class="image__user">@twitterusername</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
+                        </a>
                     </li>
 
                     <!--Imagem 6-->
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <p class="image__user">@twitterusername</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
+                        </a>
                     </li>
 
                     <!--Imagem 7-->
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <p class="image__user">@twitterusername</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
+                        </a>
                     </li>
 
                     <!--Imagem 8-->
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <p class="image__user">@twitterusername</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
+                        </a>
                     </li>
 
                     <!--Imagem 9-->
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <p class="image__user">@twitterusername</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
+                        </a>
                     </li>
 
                     <!--Imagem 10-->
                     <li class="result__image image">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
-                        <p class="image__user">@twitterusername</p>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <p class="image__user" title=""></p>
+                        </a>
                     </li>
                 </ul>
 
@@ -220,22 +243,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserNameEbdbadblanlebn alebnadfbnxjkdrbxnd</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>
@@ -246,22 +266,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserName</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>
@@ -272,22 +289,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserName</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>
@@ -298,22 +312,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserName</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>
@@ -324,22 +335,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserName</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>
@@ -350,22 +358,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserName</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>
@@ -376,22 +381,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserName</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>
@@ -402,22 +404,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserName</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>
@@ -428,22 +427,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserName</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>
@@ -454,22 +450,19 @@
                         <!--Imagem de perfil-->
                         <img
                             class="tweet__image"
-                            src="imagens/Fotos/miguel.jpg"
+                            src=""
                         >
                         <!--Autor e texto-->
                         <div class="tweet__main">
                             <!--Nome e @ do usuário-->
                             <div class="tweet__author">
-                                <h2 class="tweet__user">UserName</h2>
-                                <p class="tweet__at">@twitterusername</p>
+                                <h2 class="tweet__user" title=""></h2>
+                                <p class="tweet__at"></p>
                             </div>
                             <!--Corpo do tweet-->
-                            <p class="tweet__text">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt...
-                            </p>
+                            <p class="tweet__text"></p>
                             <!--Link para o Twitter-->
-                            <a href="">
+                            <a href="https://www.twitter.com/" target="_blank">
                                 <p class="tweet__link">Ver mais no Twitter</p>
                             </a>
                         </div>

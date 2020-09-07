@@ -1,5 +1,7 @@
 /* Bloco dos resultados */
 .result {
+    /* Esconder até que seja revelado por script */
+    display: none;
     /* Espaço */
     margin: 0 4.8vw 78px;
 }
