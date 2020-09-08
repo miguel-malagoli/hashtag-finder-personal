@@ -557,6 +557,8 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (min-width: 1200px) {
     .result__tweetList {
         margin: 0 0 0 3.7vw;
+        /* Ignorar o display: none do modificador em telas maiores */
+        display: block;
     }
 }
 
@@ -575,7 +577,7 @@ body::-webkit-scrollbar-thumb {
     border: none;
     border-bottom: 1px solid rgb(var(--theme-texto));
     /* Transição */
-    transition: color .4s ease, border .4s ease;
+    transition: color .4s ease, border .1s linear;
 }
 /* Foco */
 .tab:focus {

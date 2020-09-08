@@ -1,3 +1,7 @@
+// Elementos das abas de resultado
+const tabs = document.querySelectorAll('.tab');
+const imageList = document.querySelector('.result__imageList');
+const tweetList = document.querySelector('.result__tweetList');
 // Elemento da barra de busca
 const searchInput = document.querySelector('.search__input');
 const searchFeedback = document.querySelector('.search__feedback');
@@ -18,7 +22,7 @@ let isSearching = false;
 
 
 // Função que será rodada sempre que o usuário mexer no scroll da página
-function tweetAnimScroll() {
+function animateScroll() {
     // Ignorar o processo se o bloco de resultados estiver invisível
     if (resultBlock.style.display != 'block') {
         return;
@@ -49,8 +53,8 @@ function tweetAnimScroll() {
 }
 
 // Chamar a função ao carregar a página, e depois sempre que o usuário mexer no scroll
-tweetAnimScroll();
-document.querySelector('body').onscroll = tweetAnimScroll;
+animateScroll();
+document.querySelector('body').onscroll = animateScroll;
 
 
 // Função que busca tweets com a hashtag fornecida
@@ -233,3 +237,25 @@ searchInput.addEventListener(
         }
     }
 );
+
+
+// Função que muda a aba de resultados na versão mobile
+function changeTab(tab) {
+    if (tab == 0) {
+        tabs[0].classList.add('tab_selected');
+        tabs[1].classList.remove('tab_selected');
+        imageList.classList.remove('result__imageList_hidden');
+        tweetList.classList.add('result__tweetList_hidden');
+    } else {
+        tabs[0].classList.remove('tab_selected');
+        tabs[1].classList.add('tab_selected');
+        imageList.classList.add('result__imageList_hidden');
+        tweetList.classList.remove('result__tweetList_hidden');
+    }
+    // Resetar a visibilidade dos elementos para que a transição se repita ao mudar de aba
+    for (i=0; i<10; i++) {
+        tweetBlocks[i].classList.remove('tweet_visible');
+        images[i].classList.remove('image_visible');
+    }
+    animateScroll();
+}
