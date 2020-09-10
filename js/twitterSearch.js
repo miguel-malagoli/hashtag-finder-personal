@@ -45,7 +45,7 @@ function animateScroll() {
         rect = images[i].getBoundingClientRect();
         // Se o elemento estiver visível dentro da janela e tiver conteúdo
         if (images[i].classList.contains('image_content') &&
-            rect.top <= document.documentElement.clientHeight - rect.height) {
+            rect.top <= document.documentElement.clientHeight - (rect.height * 0.5)) {
             // Adicionar a classe que mudará suas propriedades CSS
             images[i].classList.add('image_visible');
         }
