@@ -199,10 +199,7 @@ function search(hashtag) {
         // - Extender os tweets (impedir que acabem em "..." se forem longos)
         // - Apenas 10 resultados
         "https://cors-anywhere.herokuapp.com/https://api.twitter.com/1.1/search/tweets.json?q=%23" + 
-            hashtag + "%20-filter%3Aretweets%20filter%3Asafe%20filter%3Aimages&result_type=recent&tweet_mode=extended&count=10",
-        // Credenciais
-        "3Wld7enMtTgPIJbHduMriDSda",
-        "V75LC4tPA3fbaFjcCfZ0v9ZtduqizSM1y522SUSzmaPYfLppbI"
+            hashtag + "%20-filter%3Aretweets%20filter%3Asafe%20filter%3Aimages&result_type=recent&tweet_mode=extended&count=10"
     );
     // Header HTTP de autorização
     imageRequest.setRequestHeader(
