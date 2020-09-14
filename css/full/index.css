@@ -526,15 +526,13 @@ body::-webkit-scrollbar-thumb {
     width: 42vmin;
     height: 42vmin;
     max-width: 376px;
-    max-height: 376px;
-    padding: 14px;
+    max-height: 0px;
 }
 /* Responsividade em telas maiores */
 @media only screen and (min-width: 1200px) {
     .result__image.image {
         width: 15vw;
         height: 15vw;
-        padding: 21px;
     }
 }
 
@@ -600,7 +598,7 @@ body::-webkit-scrollbar-thumb {
     text-decoration: none;
 }
 /* Outline customizada */
-.image a:focus {
+.image a:focus, .image:focus {
     outline: rgb(var(--theme-texto)) auto 1px;
     outline-offset: 4px;
 }
@@ -624,19 +622,36 @@ body::-webkit-scrollbar-thumb {
     border-radius: 21px;
     /* Tamanho */
     box-sizing: border-box;
+    padding: 0;
     /* Organização dos elementos */
     /* Também remove o display padrão de <li>, que contém o ponto */
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
+    /* Interatividade */
+    cursor: pointer;
+    pointer-events: none;
 }
 
 
+
+/* Modificador que indica se a imagem foi revelada por script */
 .image.image_visible {
+    /* Transição a opacidade e posição corretas */
     right: 0;
     opacity: 1;
     transition: right .4s ease, opacity .4s ease;
-    max-height: none;
+    /* Restaurar a proporção real da imagem */
+    max-height: 376px;
+    padding: 14px;
+    /* Interatividade */
+    pointer-events: all;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .image.image.image_visible {
+        padding: 21px;
+    }
 }
 
 
@@ -697,8 +712,8 @@ body::-webkit-scrollbar-thumb {
     max-height: 0;
     /* Organização e espaço */
     display: flex;
-    padding: 5vw 3.6vw;
-    margin: 0 0 30px;
+    padding: 0;
+    margin: 0;
     /* Tamanho */
     box-sizing: border-box;
     width: 100%;
@@ -706,21 +721,36 @@ body::-webkit-scrollbar-thumb {
     background-color: rgba(var(--theme-texto), 0.01);
     border: 1px solid rgba(var(--theme-texto), 0.15);
     border-radius: 15px;
+    /* Interatividade */
+    pointer-events: none;
 }
 /* Responsividade em telas maiores */
 @media only screen and (min-width: 1200px) {
     .tweet {
         padding: 2.2vw 2.6vw;
-        margin: 0 0 2vw;
     }
 }
 
 
+/* Quando o tweet é revelado por script */
 .tweet.tweet_visible {
+    /* Transição */
     left: 0;
     opacity: 1;
     transition: left .4s ease, opacity .4s ease;
+    /* Restaurar as proporções reais */
     max-height: none;
+    margin: 0 0 30px;
+    padding: 5vw 3.6vw;
+    /* Interatividade */
+    pointer-events: all;
+}
+/* Responsividade em telas maiores */
+@media only screen and (min-width: 1200px) {
+    .tweet.tweet_visible {
+        margin: 0 0 2vw;
+        padding: 2.2vw 2.6vw;
+    }
 }
 
 
@@ -874,4 +904,65 @@ body::-webkit-scrollbar-thumb {
     .footer__text {
         font-size: 1.3vw;
     }
+}
+
+
+/* ----------------------- BLOCO VIEW ----------------------- */
+
+/* Tela de visualização de imagem */
+.view {
+    /* Esconder o bloco até que ele seja revelado por script */
+    display: none;
+    /* Cobrir toda a tela */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Obscurecer o fundo */
+    background-color: rgba(var(--theme-texo), 0.2);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    z-index: 1;
+    /* Centralizar a imagem na tela */
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Botão de fechar */
+.view__close.button {
+    /* Posicionar no canto superior direito */
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 24px 32px;
+    /* Tamanho */
+    width: 56px;
+    height: 56px;
+    min-width: 4vw;
+    /* Fonte */
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 4.1vw;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+/* Ajuste de responsividade */
+@media only screen and (min-width: 1200px) {
+    .view__close.button {
+        margin: 2vw 3vw;
+        width: 4vw;
+        height: 4vw;
+        min-width: 4vw;
+        font-size: 2.5vw;
+    }
+}
+
+
+/* Imagem ampliada */
+.view__image {
+    /* Fazer com que a imagem caiba na tela */
+    max-width: 100%;
+    max-height: 100%;
 }

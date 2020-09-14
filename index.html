@@ -148,7 +148,7 @@
                 <ul class="result__imageList result__imageList_hidden">
 
                     <!--Imagem 1-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -157,7 +157,7 @@
                     </li>
 
                     <!--Imagem 2-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -166,7 +166,7 @@
                     </li>
 
                     <!--Imagem 3-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -175,7 +175,7 @@
                     </li>
 
                     <!--Imagem 4-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -184,7 +184,7 @@
                     </li>
 
                     <!--Imagem 5-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -193,7 +193,7 @@
                     </li>
 
                     <!--Imagem 6-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -202,7 +202,7 @@
                     </li>
 
                     <!--Imagem 7-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -211,7 +211,7 @@
                     </li>
 
                     <!--Imagem 8-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -220,7 +220,7 @@
                     </li>
 
                     <!--Imagem 9-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -229,7 +229,7 @@
                     </li>
 
                     <!--Imagem 10-->
-                    <li class="result__image image">
+                    <li class="result__image image" data-src="" tabindex="0">
                         <!--Crédito-->
                         <p class="image__text">Postado por:</p>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -489,6 +489,20 @@
         <footer class="footer">
             <p class="footer__text">© Cocreare 2020. Todos os direitos reservados</p>
         </footer>
+
+
+        <!--Visualização de imagem, só é visível quando uma imagem é clicada-->
+        <div class="view">
+            <!--Botão que esconde a visualização-->
+            <button class="view__close button button_theme_light" onclick="viewImage(false)">
+                X
+            </button>
+            <!--Imagem do resultado, ampliada-->
+            <img class="view__image"
+                src=""
+                alt=""
+            >
+        </div>
 
     </body>
 

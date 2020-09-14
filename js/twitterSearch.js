@@ -17,8 +17,13 @@ const tweetLinks = document.querySelectorAll('.tweet__link');
 // Elementos preenchidos pelas imagens buscadas
 const images = document.querySelectorAll('.image');
 const imageUsers = document.querySelectorAll('.image__user');
+// Visualização ampliada da imagem
+const imageView = document.querySelector('.view');
+const imageLarge = document.querySelector('.view__image');
 // Variável para checar se uma busca está sendo realizada
 let isSearching = false;
+// Referência ao body
+const bodyElement = document.querySelector('body');
 
 
 // Função que será rodada sempre que o usuário mexer no scroll da página
@@ -30,13 +35,15 @@ function animateScroll() {
     // Variável que irá conter a posição de cada elemento
     let rect;
     // Para cada imagem/tweet:
-    for (i=0; i<10; i++) {
+    for (let i=0; i<10; i++) {
         
         // Tweet:
         rect = tweetBlocks[i].getBoundingClientRect();
         // Se o elemento estiver visível dentro da janela e tiver conteúdo
         if (tweetBlocks[i].classList.contains('tweet_content') &&
-            rect.top <= document.documentElement.clientHeight - rect.height) {
+            (rect.top <= document.documentElement.clientHeight - rect.height ||
+                // Ou se o scroll estiver no fim da página
+                bodyElement.getBoundingClientRect().bottom - window.innerHeight <= 0)) {
             // Adicionar a classe que mudará suas propriedades CSS
             tweetBlocks[i].classList.add('tweet_visible');
         }
@@ -45,16 +52,18 @@ function animateScroll() {
         rect = images[i].getBoundingClientRect();
         // Se o elemento estiver visível dentro da janela e tiver conteúdo
         if (images[i].classList.contains('image_content') &&
-            rect.top <= document.documentElement.clientHeight - (rect.height * 0.5)) {
+            (rect.top <= document.documentElement.clientHeight - (rect.height * 0.5) ||
+                // Ou se o scroll estiver no fim da página
+                bodyElement.getBoundingClientRect().bottom - window.innerHeight <= 0)) {
             // Adicionar a classe que mudará suas propriedades CSS
             images[i].classList.add('image_visible');
+            images[i].onclick = () => {viewImage(i)};
         }
     }
 }
-
 // Chamar a função ao carregar a página, e depois sempre que o usuário mexer no scroll
 animateScroll();
-document.querySelector('body').onscroll = animateScroll;
+bodyElement.onscroll = animateScroll;
 
 
 // Função que busca tweets com a hashtag fornecida
@@ -125,6 +134,10 @@ function search(hashtag) {
                     // Marcar a imagem com a classe "content"
                     images[i].classList.add('image_content');
                     // Atribuir aos elementos as propriedades do resultado
+                    images[i].setAttribute(
+                        'data-src',
+                        imageResults.statuses[i].entities.media[0].media_url_https
+                    );
                     images[i].style.background =
                         "linear-gradient(180deg, #00000000 0%, #000000c4 100%) no-repeat, url(" +
                         imageResults.statuses[i].entities.media[0].media_url_https + ") no-repeat";
@@ -177,10 +190,7 @@ function search(hashtag) {
         // - Extender os tweets (impedir que acabem em "..." se forem longos)
         // - Apenas 10 resultados
         "https://cors-anywhere.herokuapp.com/https://api.twitter.com/1.1/search/tweets.json?q=%23" + 
-            hashtag + "%20-filter%3Aretweets%20filter%3Asafe&result_type=recent&tweet_mode=extended&count=10",
-        // Credenciais
-        "3Wld7enMtTgPIJbHduMriDSda",
-        "V75LC4tPA3fbaFjcCfZ0v9ZtduqizSM1y522SUSzmaPYfLppbI"
+            hashtag + "%20-filter%3Aretweets%20filter%3Asafe&result_type=recent&tweet_mode=extended&count=10"
     );
     // Header HTTP de autorização
     twitterRequest.setRequestHeader(
@@ -255,4 +265,20 @@ function changeTab(tab) {
         images[i].classList.remove('image_visible');
     }
     animateScroll();
+}
+
+
+// Função que é chamada ao clicar uma imagem, exibindo-a em tela inteira
+function viewImage(imageIndex) {
+    // Usar o valor falso como função de fechar a exibição
+    if (imageIndex === false) {
+        // Remover as propriedades
+        imageView.style.display = "";
+        imageLarge.src = "";
+    // Se for passado um valor numérico
+    } else {
+        // Mudar o display e o atributo da imagem
+        imageView.style.display = "flex";
+        imageLarge.src = images[imageIndex].getAttribute('data-src');
+    }
 }
