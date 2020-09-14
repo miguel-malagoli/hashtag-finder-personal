@@ -133,13 +133,6 @@ body::-webkit-scrollbar-thumb {
 
 /* Bloco botão adaptado ao header */
 .header__button.button {
-
-    /* Tamanho */
-    width: 8.5vw;
-    min-width: 86px;
-    height: 2.5vw;
-    min-height: 30px;
-
     /* Texto */
     font-family: 'Rubik', Arial, sans-serif;
     font-weight: bold;
@@ -160,27 +153,22 @@ body::-webkit-scrollbar-thumb {
 
 /* Botão */
 .button {
-
     /* Tamanho */
     width: 8.5vw;
     min-width: 86px;
     height: 2.5vw;
     min-height: 30px;
-
     /* Borda */
     border: none;
     /* Valor absoluto muito alto para arredondar 50% da altura */
     border-radius: 9999px;
-
     /* Texto */
     font-family: 'Rubik', Arial, sans-serif;
     font-weight: bold;
     font-size: 10px;
     letter-spacing: .15em;
-
     /* Cursor */
     cursor: pointer;
-
     /* Transição de cor (cores especificadas por tema) */
     transition: background-color ease-out .4s;
 }

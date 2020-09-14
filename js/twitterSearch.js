@@ -20,6 +20,9 @@ const imageUsers = document.querySelectorAll('.image__user');
 // Visualização ampliada da imagem
 const imageView = document.querySelector('.view');
 const imageLarge = document.querySelector('.view__image');
+// Elementos do header usados no controle de foco
+const logo = document.querySelector('.header__logo').parentElement;
+const nav = document.querySelectorAll('.header__button');
 // Variável para checar se uma busca está sendo realizada
 let isSearching = false;
 // Referência ao body
@@ -281,10 +284,48 @@ function viewImage(imageIndex) {
         // Remover as propriedades
         imageView.style.display = "";
         imageLarge.src = "";
+        // Reabilitar o foco de outros elementos que precisam
+        focusControl(true);
     // Se for passado um valor numérico
     } else {
         // Mudar o display e o atributo da imagem
         imageView.style.display = "flex";
         imageLarge.src = images[imageIndex].getAttribute('data-src');
+        // Desabilitar o foco de todos os outros elementos
+        focusControl(false);
     }
+}
+
+
+// Função que habilita ou desabilita o foco dos elementos interativos abaixo do bloco view
+function focusControl(enable) {
+    // Novo tabIndex que será atribuído a todo esse grupo de elementos
+    let newIndex = enable ? 0 : -1;
+    // Checar todos os 10 elementos de tweet e imagem
+    for (i=0; i<10; i++) {
+        // Se o foco for desabilitado, checar se a imagem tem conteúdo 
+        if (enable == false ||
+            images[i].classList.contains("image_content")) {
+            // Alterar o tabIndex
+            images[i].tabIndex = newIndex;
+            imageUsers[i].parentElement.tabIndex = newIndex;
+        }
+        // Se o foco for desabilitado, checar se o tweet tem conteúdo 
+        if (enable == false ||
+            tweetBlocks[i].classList.contains("tweet_content")) {
+            // Alterar o tabIndex
+            tweetLinks[i].parentElement.tabIndex = newIndex;
+        }
+    }
+    // Outros elementos com foco:
+    // Logo
+    logo.tabIndex = newIndex;
+    // Botões do header
+    nav[0].tabIndex = newIndex;
+    nav[1].tabIndex = newIndex;
+    // Campo de busca
+    searchInput.tabIndex = newIndex;
+    // Abas de resultado
+    tabs[0].tabIndex = newIndex;
+    tabs[1].tabIndex = newIndex;
 }

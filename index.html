@@ -56,7 +56,7 @@
         <header class="header">
 
             <!--Logo-->
-            <a href="index.html">
+            <a href="index.html" tabindex="0">
                 <img
                 class="header__logo"
                 src="imagens/logo.svg"
@@ -69,7 +69,7 @@
                 <!--Atalho para a página do projeto-->
                 <!--TabIndex negativo para evitar a navegação redundante entre o <a> e o <button> do link-->
                 <a href="Sobre.html" tabindex="-1">
-                    <button class="button button_theme_light">
+                    <button class="header__button button button_theme_light" tabindex="0">
                         <img
                             class="button__icon"
                             src="imagens/icon-info-circle.svg"
@@ -81,7 +81,7 @@
                 <!--Atalho para a página de login-->
                 <!--TabIndex negativo para evitar a navegação redundante entre o <a> e o <button> do link-->
                 <a href="Login.html" tabindex="-1">
-                    <button class="button button_theme_dark">
+                    <button class="header__button button button_theme_dark" tabindex="0">
                         <img
                             class="button__icon"
                             src="imagens/icon-user-alt.svg"
@@ -120,6 +120,7 @@
                     placeholder="Buscar..."
                     spellcheck="false"
                     maxlength="140"
+                    tabindex="0"
                 >
             </div>
             <p class="search__feedback"></p>
@@ -132,9 +133,17 @@
             <!--Tabs para selecionar qual tipo de resultado é mostrado - visível e necessário somente em mobile-->
             <div class="result__type">
                 <!--Tab de Imagens-->
-                <button class="result__tab tab" onclick="changeTab(0)">Imagens</button>
+                <button class="result__tab tab"
+                    onclick="changeTab(0)"
+                    tabindex="0">
+                    Imagens
+                </button>
                 <!--Tab de Tweets-->
-                <button class="result__tab tab tab_selected" onclick="changeTab(1)">Tweets</button>
+                <button class="result__tab tab tab_selected"
+                    onclick="changeTab(1)"
+                    tabindex="0">
+                    Tweets
+                </button>
             </div>
 
             <!--Texto de feedback da busca-->
