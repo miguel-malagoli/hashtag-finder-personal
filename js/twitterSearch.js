@@ -123,10 +123,12 @@ function search(hashtag) {
                         'href',
                         "https://twitter.com/" + tweet.user.screen_name
                     );
+                    tweetLinks[i].parentElement.tabIndex = "0";
                 // Se NÃO houver um resultado para colocar no bloco de tweet "i"
                 } else {
                     // Remover o marcador de "content" caso ele exista por causa de uma pesquisa anterior
                     tweetBlocks[i].classList.remove('tweet_content');
+                    tweetLinks[i].parentElement.tabIndex = "-1";
                 }
 
                 // Se houver um resultado para colocar no bloco de imagem "i"
@@ -134,6 +136,7 @@ function search(hashtag) {
                     // Marcar a imagem com a classe "content"
                     images[i].classList.add('image_content');
                     // Atribuir aos elementos as propriedades do resultado
+                    images[i].tabIndex = "0"
                     images[i].setAttribute(
                         'data-src',
                         imageResults.statuses[i].entities.media[0].media_url_https
@@ -152,10 +155,13 @@ function search(hashtag) {
                         'href',
                         "https://twitter.com/" + imageResults.statuses[i].user.screen_name
                     );
+                    imageUsers[i].parentElement.tabIndex = "0";
                 // Se NÃO houver um resultado para colocar no bloco de imagem "i"
                 } else {
                     // Remover o marcador de "content" caso ele exista por causa de uma pesquisa anterior
                     images[i].classList.remove('image_content');
+                    images[i].tabIndex = "-1"
+                    imageUsers[i].parentElement.tabIndex = "-1";
                 }
             }
             // Tornar o bloco de resultado visível sobrepondo o CSS
