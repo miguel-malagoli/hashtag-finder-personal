@@ -60,7 +60,17 @@ function animateScroll() {
                 bodyElement.getBoundingClientRect().bottom - window.innerHeight <= 0)) {
             // Adicionar a classe que mudará suas propriedades CSS
             images[i].classList.add('image_visible');
+            // Adicionar funções para expandir a imagem por mouse e teclado
             images[i].onclick = () => {viewImage(i)};
+            images[i].onkeypress = (e) => {
+                let code = e.charCode || e.keyCode;
+                // Reagir às teclas Enter e Space
+                if(code === 32 || code === 13) {
+                    // No caso do Space, prevenir o scroll padrão
+                    e.preventDefault();
+                    viewImage(i);
+                }
+            };
         }
     }
 }
